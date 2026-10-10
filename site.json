@@ -1,0 +1,36 @@
+{
+  "title": "DDLS Student Council",
+  "tagline": "Courses, community and open source, by students for students.",
+  "status": "Draft – launching soon",
+  "nav": [
+    {
+      "page": "index",
+      "label": "Home"
+    },
+    {
+      "page": "courses",
+      "label": "Courses",
+      "blurb": "Overviews, prerequisites and tips from fellow students."
+    },
+    {
+      "page": "community",
+      "label": "Community",
+      "blurb": "Meet the council, clubs and events."
+    },
+    {
+      "page": "calendar",
+      "label": "Calendar",
+      "blurb": "Deadlines, meetings and upcoming events."
+    },
+    {
+      "page": "github",
+      "label": "Join us on GitHub",
+      "blurb": "Contribute to open, student-led projects."
+    },
+    {
+      "page": "about",
+      "label": "About",
+      "blurb": "What the Student Council does."
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 # Files
 .venv
 
-# Folders
+# Folders# Folders
+dist/
+__pycache__/

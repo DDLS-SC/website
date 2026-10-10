@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Upcoming events, deadlines and student council meetings.</p>{% endblock %}
+{% block content %}
+{% if data.events %}
+<ul class="cards">
+  {% for event in data.events | sort(attribute="date") %}
+  <li>
+    <h3>{{ event.title }}</h3>
+    <p class="meta">{{ event.date }}{% if event.location %} · {{ event.location }}{% endif %}</p>
+    {% if event.description %}<p>{{ event.description }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">No upcoming events yet – check back soon.</p>
+{% endif %}
+{% endblock %}

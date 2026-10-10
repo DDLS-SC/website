@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Course overviews, schedules, prerequisites, and tips from other students.</p>{% endblock %}
+{% block content %}
+{% if data.courses %}
+<ul class="cards">
+  {% for course in data.courses %}
+  <li>
+    <h3>{% if course.url %}<a href="{{ course.url }}">{{ course.name }}</a>{% else %}{{ course.name }}{% endif %}</h3>
+    {% if course.code %}<p class="meta">{{ course.code }}</p>{% endif %}
+    {% if course.description %}<p>{{ course.description }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">No courses listed yet – check back soon.</p>
+{% endif %}
+{% endblock %}

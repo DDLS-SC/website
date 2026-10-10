@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block hero %}
+<section class="hero">
+  <div class="container">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.tagline }}</p>
+    <div class="actions">
+      <a class="button" href="courses.html">Explore courses</a>
+      <a class="button secondary" href="github.html">Join us on GitHub</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block content %}
+<h2>What you'll find here</h2>
+<div class="cards">
+  {% for item in site.nav if item.page != "index" %}
+  <div class="card">
+    <h3>{{ item.label }}</h3>
+    <p>{{ item.blurb }}</p>
+    <a class="more" href="{{ item.page }}.html">Open &rarr;</a>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>News and announcements</h2>
+{% if data.news %}
+<ul class="cards">
+  {% for item in data.news %}
+  <li><h3>{{ item.title }}</h3><p class="meta">{{ item.date }}</p></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">Nothing yet – check back soon.</p>
+{% endif %}
+{% endblock %}

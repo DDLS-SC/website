@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>What the DDLS Student Council does and how you can take part.</p>{% endblock %}
+{% block content %}
+<p>
+  The DDLS Student Council represents students and helps them take part in university life.
+  This page will describe what we do and how you can participate.
+</p>
+
+<h2>Current Council Members</h2>
+{% if data.members %}
+{% set ns = namespace(role=None) %}
+{% for member in data.members %}
+{% if member.role != ns.role %}
+{% if ns.role is not none %}</ul>{% endif %}
+<h3>{{ member.role }}s</h3>
+<ul class="people">
+{% set ns.role = member.role %}
+{% endif %}
+  <li>
+    <strong>{{ member.name }}</strong> ({{ member.affiliation }}):
+    <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+  </li>
+{% endfor %}
+</ul>
+{% else %}
+<p class="empty">Council members will be listed here soon.</p>
+{% endif %}
+{% endblock %}

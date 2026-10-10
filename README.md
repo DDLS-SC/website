@@ -33,15 +33,32 @@ The official website of the **DDLS Student Council**, built by students for stud
 
 ## Tech
 
-A static website hosted on **GitHub Pages**. Every push to `main` is deployed automatically by the workflow in [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml).
+A static site generated with Python and [Jinja2](https://jinja.palletsprojects.com/), hosted on **GitHub Pages**. Every push to `main` builds the site and deploys it with [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml).
 
-To preview locally, open [index.html](index.html) in your browser, or run a simple server:
+### Project layout
 
-```bash
-python3 -m http.server 8000
+```text
+site.json        Site title, tagline, status badge and the navigation menu
+pages/           One template per page (index.html, courses.html, ...)
+templates/       base.html: shared header, navigation and footer
+data/            JSON content: courses, events, members, news
+static/          CSS and other files copied as-is
+build.py         Builds everything into dist/ (not committed)
 ```
 
-Then visit <http://localhost:8000>.
+### Run locally
+
+```bash
+conda env create -f environment.yml   # first time only
+conda activate ddls-website
+python build.py --serve               # http://localhost:8000
+```
+
+### Common changes
+
+- **Add a course, event, member or news item:** edit the matching file in `data/` (each is a JSON list; the page templates show the fields they use).
+- **Add a page:** create `pages/<name>.html` that extends `base.html`, then add `{ "page": "<name>", "label": "..." }` to `nav` in `site.json`. The build stops with a clear error if the two get out of sync.
+- **Change the look:** edit `static/style.css`; colours live in the variables at the top.
 
 ## Contributing
 

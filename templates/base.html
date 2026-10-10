@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ site.tagline }}" />
+    <title>{% if page.label != "Home" %}{{ page.label }} – {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container bar">
+        <a class="brand" href="index.html">{{ site.title }}</a>
+        <nav aria-label="Site sections">
+          {% for item in site.nav %}
+          <a href="{{ item.page }}.html"{% if item.page == page.slug %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    {% block hero %}
+    <section class="page-title">
+      <div class="container">
+        <h1>{{ page.label }}</h1>
+        {% block subtitle %}{% endblock %}
+      </div>
+    </section>
+    {% endblock %}
+
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>&copy; {{ site.title }}</span>
+        {% if site.status %}<span class="badge">{{ site.status }}</span>{% endif %}
+      </div>
+    </footer>
+  </body>
+</html>
