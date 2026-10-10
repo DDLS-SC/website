@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Andrea Garcia",
+    "site": "Stockholm",
+    "email": "andrea.garcia.navarro@ki.se"
+  },
+  {
+    "name": "Olle Edgren Schüllerqvist",
+    "site": "Uppsala",
+    "email": "olle.edgren.schullerqvist@it.uu.se"
+  },
+  {
+    "name": "Axel Josefsson",
+    "site": "Linköping",
+    "email": "axel.josefsson@predictme.se"
+  },
+  {
+    "name": "Vasilina Akulova",
+    "site": "Umeå",
+    "email": "vasilina.akulova@slu.se"
+  },
+  {
+    "name": "Marina Masliakova",
+    "site": "Gothenburg",
+    "email": "marina.masliakova@gu.se"
+  },
+  {
+    "name": "Markus Heidrich",
+    "site": "Lund",
+    "email": "markus.heidrich@immun.lth.se"
+  }
+]
