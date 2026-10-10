@@ -74,3 +74,13 @@ Have an idea but not sure where to start? Open an issue.
 ## Contact
 
 Questions or suggestions? Reach the DDLS Student Council at *(contact details to be added)*.
+
+
+## To dos 
+[] Writing FAQs
+[] Update calendar
+[] Set up links 
+[] Form for registration
+[] Course data 
+[] Invitation for the members 
+
