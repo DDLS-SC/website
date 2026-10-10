@@ -1,7 +1,8 @@
 """Turn course files and events into month grids and an agenda list for the Calendar page."""
 import calendar
+import hashlib
 import json
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -134,3 +135,53 @@ def build_calendar(root: Path, data: dict):
             year, month = year + 1, 1
 
     return {"months": months, "agenda": events, "weekdays": WEEKDAYS}
+
+
+def _escape(text):
+    return (
+        text.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\r", "").replace("\n", "\\n")
+    )
+
+
+def _fold(line):
+    """Fold a content line to 75 octets as required by RFC 5545."""
+    out, current = [], ""
+    for char in line:
+        if len((current + char).encode("utf-8")) > (75 if not out else 74):
+            out.append(current)
+            current = char
+        else:
+            current += char
+    out.append(current)
+    return "\r\n ".join(out)
+
+
+def build_ics(events, name):
+    """An iCalendar file (all-day events) that can be imported into Google, Outlook or Apple Calendar."""
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//DDLS Student Council//Website//EN",
+        "CALSCALE:GREGORIAN",
+        f"X-WR-CALNAME:{_escape(name)}",
+    ]
+    for event in events:
+        uid = hashlib.sha1(f"{event['kind']}|{event['title']}|{event['start']}".encode()).hexdigest()
+        lines += [
+            "BEGIN:VEVENT",
+            f"UID:{uid}@ddls-student-council",
+            f"DTSTAMP:{stamp}",
+            f"DTSTART;VALUE=DATE:{event['start']:%Y%m%d}",
+            # All-day DTEND is exclusive, so add one day.
+            f"DTEND;VALUE=DATE:{event['end'] + timedelta(days=1):%Y%m%d}",
+            f"SUMMARY:{_escape(event['title'])}",
+            f"DESCRIPTION:{_escape(event['summary'])}",
+        ]
+        if event["location"]:
+            lines.append(f"LOCATION:{_escape(event['location'])}")
+        if event["link"]:
+            lines.append(f"URL:{event['link']}")
+        lines.append("END:VEVENT")
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(_fold(line) for line in lines) + "\r\n"

@@ -15,7 +15,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 
-from site_calendar import build_calendar
+from site_calendar import build_calendar, build_ics
 
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
@@ -58,6 +58,10 @@ def build():
             site=site, data=data, page=page, calendar=calendar_view
         )
         (DIST / f"{slug}.html").write_text(html, encoding="utf-8")
+    if calendar_view["agenda"]:
+        (DIST / "calendar.ics").write_text(
+            build_ics(calendar_view["agenda"], site["title"]), encoding="utf-8", newline=""
+        )
     print(f"Built {len(pages)} pages into {DIST.relative_to(ROOT)}/")
 
 
