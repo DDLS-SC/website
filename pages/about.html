@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% macro mail(name, email) %}<a class="mail" href="mailto:{{ email }}" title="Email {{ name }}" aria-label="Email {{ name }}"><svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>{% endmacro %}
 {% block subtitle %}<p>What the DDLS Student Council does and how you can take part.</p>{% endblock %}
 {% block content %}
 <p>
@@ -19,8 +20,8 @@
     {% set ns.role = member.role %}
     {% endif %}
       <li>
-        <strong>{{ member.name }}</strong> ({{ member.affiliation }}):
-        <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+        <strong>{{ member.name }}</strong> ({{ member.affiliation }})
+        {{ mail(member.name, member.email) }}
       </li>
     {% endfor %}
     </ul>
@@ -35,8 +36,8 @@
     <ul class="people">
       {% for contact in data.site_contacts %}
       <li>
-        <strong>{{ contact.name }}</strong> ({{ contact.site }}):
-        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+        <strong>{{ contact.name }}</strong> ({{ contact.site }})
+        {{ mail(contact.name, contact.email) }}
       </li>
       {% endfor %}
     </ul>
