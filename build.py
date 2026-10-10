@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the static site from pages/, templates/, data/, course/, event/ and static/ into dist/.
+"""Build the static site from pages/, templates/, data/, course/, event/, news/ and static/ into dist/.
 
 Usage:
     python build.py            # build into dist/
@@ -31,6 +31,12 @@ def load_json(path):
 def build():
     site = load_json(ROOT / "site.json")
     data = {p.stem: load_json(p) for p in sorted((ROOT / "data").glob("*.json"))}
+
+    # News items live in news/*.json (plus data/news.json), newest first.
+    news = list(data.get("news", []))
+    for path in sorted((ROOT / "news").glob("*.json")):
+        news += load_json(path)
+    data["news"] = sorted(news, key=lambda item: item["date"], reverse=True)
 
     pages = {p.stem for p in (ROOT / "pages").glob("*.html")}
     nav = {item["page"] for item in site["nav"]}
