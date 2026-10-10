@@ -2,12 +2,57 @@
   {
     "name": "Machine Learning for Life Sciences",
     "credits": 3,
+    "year": 2,
     "format": "Online & on-site",
     "start_date": "2026-10-12",
     "end_date": "2026-10-16",
     "location": "Uppsala, BMC",
     "host": "Uppsala University",
     "status": "Closed",
+    "link": ""
+  },
+  {
+    "name": "Transfer Learning for Life Science",
+    "credits": 5,
+    "format": "Online & on-site",
+    "start_date": "2026-09-14",
+    "end_date": "2026-09-18",
+    "location": "Linköping, Campus Valla",
+    "host": "Linköping University",
+    "status": "Completed",
+    "link": ""
+  },
+  {
+    "name": "Experiment Design for High-Throughput Genomics Experiments",
+    "credits": 3,
+    "format": "Online & on-site",
+    "start_date": "2026-11-23",
+    "end_date": "2026-11-27",
+    "location": "Stockholm, Solna",
+    "host": "",
+    "status": "Upcoming",
+    "link": ""
+  },
+  {
+    "name": "Training, Validation, Problem Diagnosis, and Troubleshooting of Using Deep Neural Networks in Life Science Applications",
+    "credits": 5,
+    "format": "Online & on-site",
+    "start_date": "2026-06-08",
+    "end_date": "2026-06-12",
+    "location": "Stockholm, Albano",
+    "host": "",
+    "status": "Completed",
+    "link": ""
+  },
+  {
+    "name": "Principles and tools for FAIR research practices",
+    "credits": 3,
+    "format": "Online & on-site",
+    "start_date": "2026-10-19",
+    "end_date": "2026-10-23",
+    "location": "Stockholm, Solna",
+    "host": "",
+    "status": "Upcoming",
     "link": ""
   }
 ]
