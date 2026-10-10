@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Answers to common questions from students.</p>{% endblock %}
+{% block content %}
+{% if data.faq %}
+<div class="faq">
+  {% for item in data.faq %}
+  <details>
+    <summary>{{ item.question }}</summary>
+    <p>{{ item.answer }}</p>
+  </details>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty">Frequently asked questions will be added here soon.</p>
+{% endif %}
+{% endblock %}

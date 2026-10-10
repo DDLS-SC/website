@@ -181,3 +181,14 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   cursor: not-allowed;
 }
 .button.disabled:hover { filter: none; }
+
+/* ---------- FAQ accordion ---------- */
+.faq details {
+  margin: 0 0 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.faq summary { padding: 0.9rem 1.1rem; font-weight: 600; cursor: pointer; }
+.faq details[open] summary { color: var(--accent); }
+.faq details p { margin: 0; padding: 0 1.1rem 1rem; }

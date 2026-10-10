@@ -31,6 +31,11 @@
       "page": "about",
       "label": "About",
       "blurb": "What the Student Council does."
+    },
+    {
+      "page": "faq",
+      "label": "FAQ",
+      "blurb": "Answers to common questions."
     }
   ]
 }
