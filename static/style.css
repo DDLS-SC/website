@@ -192,3 +192,6 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .faq summary { padding: 0.9rem 1.1rem; font-weight: 600; cursor: pointer; }
 .faq details[open] summary { color: var(--accent); }
 .faq details p { margin: 0; padding: 0 1.1rem 1rem; }
+
+.form-embed { width: 100%; height: 40rem; border: 0; border-top: 1px solid var(--border); background: #fff; }
+.faq details > .meta { padding: 0.75rem 1.1rem 1rem; }

@@ -17,4 +17,26 @@
   {{ join_card("GitHub organisation", "Contribute to open, student-led projects, including this website.", "Join on GitHub", data.links.github) }}
   {{ join_card("WhatsApp group", "Chat with fellow students and get news as it happens.", "Join the WhatsApp group", data.links.whatsapp) }}
 </div>
+
+<h2>Apply to join</h2>
+<p>
+  Membership of the GitHub organisation is by invitation. Fill in the short application below and
+  a council member will review it and send an invitation to your GitHub username.
+</p>
+<div class="faq">
+  <details>
+    <summary>Open the application form</summary>
+    {% if data.links.application_form %}
+    <iframe class="form-embed" src="{{ data.links.application_form }}" title="Application form" loading="lazy">
+      Loading&hellip;
+    </iframe>
+    <p class="meta">
+      Form not showing? <a href="{{ data.links.application_form }}" rel="noopener">Open it in a new tab</a>.
+      We use your answers only to review your application and delete them if it is not accepted.
+    </p>
+    {% else %}
+    <p class="empty">The application form is coming soon.</p>
+    {% endif %}
+  </details>
+</div>
 {% endblock %}
