@@ -6,23 +6,43 @@
   This page will describe what we do and how you can participate.
 </p>
 
-<h2>Current Council Members</h2>
-{% if data.members %}
-{% set ns = namespace(role=None) %}
-{% for member in data.members %}
-{% if member.role != ns.role %}
-{% if ns.role is not none %}</ul>{% endif %}
-<h3>{{ member.role }}s</h3>
-<ul class="people">
-{% set ns.role = member.role %}
-{% endif %}
-  <li>
-    <strong>{{ member.name }}</strong> ({{ member.affiliation }}):
-    <a href="mailto:{{ member.email }}">{{ member.email }}</a>
-  </li>
-{% endfor %}
-</ul>
-{% else %}
-<p class="empty">Council members will be listed here soon.</p>
-{% endif %}
+<div class="columns">
+  <section>
+    <h2>Current Council Members</h2>
+    {% if data.members %}
+    {% set ns = namespace(role=None) %}
+    {% for member in data.members %}
+    {% if member.role != ns.role %}
+    {% if ns.role is not none %}</ul>{% endif %}
+    <h3>{{ member.role }}s</h3>
+    <ul class="people">
+    {% set ns.role = member.role %}
+    {% endif %}
+      <li>
+        <strong>{{ member.name }}</strong> ({{ member.affiliation }}):
+        <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">Council members will be listed here soon.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>On-site Local Contacts</h2>
+    {% if data.site_contacts %}
+    <ul class="people">
+      {% for contact in data.site_contacts %}
+      <li>
+        <strong>{{ contact.name }}</strong> ({{ contact.site }}):
+        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">Local contacts will be listed here soon.</p>
+    {% endif %}
+  </section>
+</div>
 {% endblock %}

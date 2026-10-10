@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Connect with other students and contribute to student-led projects.</p>{% endblock %}
+{% block content %}
+{% macro join_card(title, text, label, url) %}
+<div class="card">
+  <h3>{{ title }}</h3>
+  <p>{{ text }}</p>
+  {% if url %}
+  <a class="button" href="{{ url }}" rel="noopener">{{ label }}</a>
+  {% else %}
+  <span class="button disabled" aria-disabled="true">Link coming soon</span>
+  {% endif %}
+</div>
+{% endmacro %}
+
+<div class="cards">
+  {{ join_card("GitHub organisation", "Contribute to open, student-led projects, including this website.", "Join on GitHub", data.links.github) }}
+  {{ join_card("WhatsApp group", "Chat with fellow students and get news as it happens.", "Join the WhatsApp group", data.links.whatsapp) }}
+</div>
+{% endblock %}

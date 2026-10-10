@@ -164,3 +164,20 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* ---------- People lists ---------- */
 .people { list-style: none; margin: 0.5rem 0 1.5rem; padding: 0; }
 .people li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+
+/* ---------- Side-by-side columns (stack on narrow screens) ---------- */
+.columns {
+  display: grid;
+  gap: 0 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  align-items: start;
+}
+
+.button.disabled {
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.button.disabled:hover { filter: none; }
