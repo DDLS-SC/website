@@ -1,5 +1,7 @@
 # DDLS Student Council Website
 
+🌐 **Website:** <https://ddls-sc.github.io/website/>
+
 > **Status:** 🚧 Draft – the website is in planning and has not launched yet.
 
 The official website of the **DDLS Student Council**, built by students for students. It will be the one place to find out about your courses, connect with the community, and get involved in our open-source projects.
