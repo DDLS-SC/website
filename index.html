@@ -3,78 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DDLS Student Council</title>
-    <style>
-      :root {
-        --bg: #ffffff;
-        --fg: #1f2933;
-        --muted: #616e7c;
-        --accent: #2563eb;
-        --border: #d9e2ec;
-        --surface: #f5f7fa;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #11161c;
-          --fg: #e4e7eb;
-          --muted: #9aa5b1;
-          --accent: #60a5fa;
-          --border: #2d3748;
-          --surface: #1a212b;
-        }
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-        line-height: 1.6;
-        background: var(--bg);
-        color: var(--fg);
-      }
-      header, main, footer {
-        max-width: 56rem;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-      header { padding-top: 2rem; }
-      h1 { margin: 0 0 0.25rem; }
-      .tagline { margin: 0 0 1.5rem; color: var(--muted); }
-      .draft {
-        display: inline-block;
-        padding: 0.1rem 0.6rem;
-        border-radius: 999px;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        font-size: 0.85rem;
-        color: var(--muted);
-      }
-      [role="tablist"] {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-        border-bottom: 1px solid var(--border);
-      }
-      [role="tab"] {
-        font: inherit;
-        padding: 0.6rem 1rem;
-        border: 0;
-        border-bottom: 3px solid transparent;
-        background: none;
-        color: var(--muted);
-        cursor: pointer;
-      }
-      [role="tab"]:hover { color: var(--fg); }
-      [role="tab"][aria-selected="true"] {
-        color: var(--accent);
-        border-bottom-color: var(--accent);
-        font-weight: 600;
-      }
-      [role="tab"]:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-      [role="tabpanel"] { padding: 1.5rem 0; }
-      [role="tabpanel"][hidden] { display: none; }
-      a { color: var(--accent); }
-      footer { padding-top: 1rem; padding-bottom: 2rem; color: var(--muted); font-size: 0.9rem; }
-    </style>
+    <title>Home – DDLS Student Council</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -85,90 +15,24 @@
       </p>
     </header>
 
+    <nav aria-label="Site sections">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="community.html">Community</a>
+      <a href="github.html">Join us on GitHub</a>
+      <a href="about.html">About</a>
+    </nav>
+
     <main>
-      <div role="tablist" aria-label="Site sections">
-        <button role="tab" id="tab-home" aria-controls="panel-home" aria-selected="true">Home</button>
-        <button role="tab" id="tab-courses" aria-controls="panel-courses" aria-selected="false" tabindex="-1">Courses</button>
-        <button role="tab" id="tab-community" aria-controls="panel-community" aria-selected="false" tabindex="-1">Community</button>
-        <button role="tab" id="tab-github" aria-controls="panel-github" aria-selected="false" tabindex="-1">Join us on GitHub</button>
-        <button role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" tabindex="-1">About</button>
-      </div>
-
-      <section role="tabpanel" id="panel-home" aria-labelledby="tab-home">
-        <h2>Welcome</h2>
-        <p>
-          This is the home of the DDLS Student Council. Find out about your courses, meet the
-          community, and get involved in our open-source projects.
-        </p>
-        <h3>News and announcements</h3>
-        <p>Nothing yet – check back soon.</p>
-      </section>
-
-      <section role="tabpanel" id="panel-courses" aria-labelledby="tab-courses" hidden>
-        <h2>Courses</h2>
-        <p>
-          Course overviews, schedules, prerequisites, and tips and resources from other students
-          will appear here.
-        </p>
-      </section>
-
-      <section role="tabpanel" id="panel-community" aria-labelledby="tab-community" hidden>
-        <h2>Community</h2>
-        <p>
-          Meet the student council members, see upcoming events and clubs, and find out how to get
-          in touch.
-        </p>
-      </section>
-
-      <section role="tabpanel" id="panel-github" aria-labelledby="tab-github" hidden>
-        <h2>Join us on GitHub</h2>
-        <p>
-          We will soon invite students to join our GitHub organisation. This page will explain how
-          to join, our contribution guidelines, and the open projects you can work on.
-        </p>
-      </section>
-
-      <section role="tabpanel" id="panel-about" aria-labelledby="tab-about" hidden>
-        <h2>About</h2>
-        <p>
-          The DDLS Student Council represents students and helps them take part in university life.
-          This page will describe what we do and how you can participate.
-        </p>
-      </section>
+      <h2>Welcome</h2>
+      <p>
+        This is the home of the DDLS Student Council. Find out about your courses, meet the
+        community, and get involved in our open-source projects.
+      </p>
+      <h3>News and announcements</h3>
+      <p>Nothing yet – check back soon.</p>
     </main>
 
     <footer>&copy; DDLS Student Council</footer>
-
-    <script>
-      (function () {
-        var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-
-        function select(tab, focus) {
-          tabs.forEach(function (t) {
-            var active = t === tab;
-            t.setAttribute('aria-selected', active ? 'true' : 'false');
-            t.tabIndex = active ? 0 : -1;
-            document.getElementById(t.getAttribute('aria-controls')).hidden = !active;
-          });
-          if (focus) tab.focus();
-          history.replaceState(null, '', '#' + tab.id.replace('tab-', ''));
-        }
-
-        tabs.forEach(function (tab, i) {
-          tab.addEventListener('click', function () { select(tab); });
-          tab.addEventListener('keydown', function (e) {
-            var next = null;
-            if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
-            else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
-            else if (e.key === 'Home') next = tabs[0];
-            else if (e.key === 'End') next = tabs[tabs.length - 1];
-            if (next) { e.preventDefault(); select(next, true); }
-          });
-        });
-
-        var initial = document.getElementById('tab-' + location.hash.slice(1));
-        if (initial) select(initial);
-      })();
-    </script>
   </body>
 </html>
