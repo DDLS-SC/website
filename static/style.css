@@ -1,26 +1,26 @@
 /* ---------- Design tokens ---------- */
 :root {
   --bg: #ffffff;
-  --fg: #1b2430;
-  --muted: #5d6b7b;
-  --accent: #4f46e5;
-  --accent-2: #06b6d4;
+  --fg: #2a3a2e;
+  --muted: #667363;
+  --accent: #3f7d4e;
+  --accent-2: #e2a82e;
   --accent-fg: #ffffff;
-  --border: #e3e8ef;
-  --surface: #f6f8fb;
-  --shadow: 0 1px 2px rgb(16 24 40 / 0.06), 0 4px 12px rgb(16 24 40 / 0.06);
+  --border: #e6e2d3;
+  --surface: #f8f6ee;
+  --shadow: 0 1px 2px rgb(42 58 46 / 0.07), 0 4px 12px rgb(42 58 46 / 0.07);
   --radius: 0.75rem;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e131a;
-    --fg: #e6eaf0;
-    --muted: #9aa7b6;
-    --accent: #818cf8;
-    --accent-2: #22d3ee;
-    --accent-fg: #0e131a;
-    --border: #243040;
-    --surface: #151c26;
+    --bg: #121811;
+    --fg: #e8ecdf;
+    --muted: #a3ae9b;
+    --accent: #8fc79a;
+    --accent-2: #e8bb4f;
+    --accent-fg: #121811;
+    --border: #2b372a;
+    --surface: #1a2219;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3);
   }
 }
