@@ -195,3 +195,97 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .form-embed { width: 100%; height: 40rem; border: 0; border-top: 1px solid var(--border); background: #fff; }
 .faq details > .meta { padding: 0.75rem 1.1rem 1rem; }
+
+/* ---------- Calendar ---------- */
+.legend { display: flex; gap: 0.5rem; margin: 0 0 1rem; }
+.scroll { overflow-x: auto; }
+.cal { width: 100%; min-width: 42rem; border-collapse: collapse; table-layout: fixed; }
+.cal th {
+  padding: 0.4rem;
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.cal td {
+  height: 5.5rem;
+  padding: 0.25rem;
+  vertical-align: top;
+  border: 1px solid var(--border);
+}
+.cal td.outside { background: var(--surface); }
+.cal td.weekend { background: color-mix(in srgb, var(--surface) 70%, transparent); }
+.cal .num { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.2rem; }
+
+.chip {
+  display: block;
+  margin: 0 0 0.2rem;
+  padding: 0.05rem 0.4rem;
+  min-height: 1.35rem;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.legend .chip { display: inline-block; }
+.chip.course { background: color-mix(in srgb, var(--accent) 22%, var(--bg)); color: var(--fg); border-left: 3px solid var(--accent); }
+.chip.event { background: color-mix(in srgb, var(--accent-2) 30%, var(--bg)); color: var(--fg); border-left: 3px solid var(--accent-2); }
+/* Multi-day events read as one continuous bar across days. */
+.cal .chip.cont { margin-left: -0.25rem; border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.cal .chip.open { margin-right: -0.25rem; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+
+.agenda { list-style: none; margin: 1rem 0 0; padding: 0; }
+.agenda li {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.9rem 0 0.9rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+}
+.agenda li.event { border-left-color: var(--accent-2); }
+.agenda h3 { margin: 0; font-size: 1.05rem; }
+.agenda p { margin: 0; }
+.agenda .when { font-weight: 600; }
+@media (max-width: 36rem) { .agenda li { grid-template-columns: 1fr; } }
+
+/* ---------- Month switcher (shown only when JavaScript is available) ---------- */
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+.cal-nav[hidden], .month[hidden] { display: none; }
+.cal-nav strong { font-size: 1.3rem; text-align: center; }
+.cal-nav .button { cursor: pointer; font: inherit; font-weight: 600; background: transparent; }
+.cal-nav .button:disabled { opacity: 0.4; cursor: not-allowed; }
+.cal-js .month > h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---------- Today marker ---------- */
+.cal td.today { outline: 2px solid var(--accent); outline-offset: -2px; background: color-mix(in srgb, var(--accent-2) 14%, var(--bg)); }
+.cal td.today .num { color: var(--accent); font-weight: 700; }
+.today-label { margin-left: 0.25rem; padding: 0 0.35rem; border-radius: 999px; background: var(--accent); color: var(--accent-fg); font-size: 0.7rem; }
+.cal-title-group { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.25rem 0.75rem; }
+.today-btn { font: inherit; font-size: 0.85rem; padding: 0.15rem 0.7rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); cursor: pointer; }
+.today-btn:hover { border-color: var(--accent); }
+
+/* ---------- Calendar hover tooltip ---------- */
+.cal-tip {
+  position: absolute;
+  z-index: 20;
+  max-width: 20rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius);
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+.cal-tip[hidden] { display: none; }
+.cal .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }

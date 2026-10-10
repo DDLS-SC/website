@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the static site from pages/, templates/, data/ and static/ into dist/.
+"""Build the static site from pages/, templates/, data/, course/, event/ and static/ into dist/.
 
 Usage:
     python build.py            # build into dist/
@@ -14,6 +14,8 @@ import sys
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
+
+from site_calendar import build_calendar
 
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
@@ -48,10 +50,13 @@ def build():
         shutil.rmtree(DIST)
     shutil.copytree(ROOT / "static", DIST)
 
+    calendar_view = build_calendar(ROOT, data)
     labels = {item["page"]: item["label"] for item in site["nav"]}
     for slug in sorted(pages):
         page = {"slug": slug, "label": labels[slug]}
-        html = env.get_template(f"{slug}.html").render(site=site, data=data, page=page)
+        html = env.get_template(f"{slug}.html").render(
+            site=site, data=data, page=page, calendar=calendar_view
+        )
         (DIST / f"{slug}.html").write_text(html, encoding="utf-8")
     print(f"Built {len(pages)} pages into {DIST.relative_to(ROOT)}/")
 

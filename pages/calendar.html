@@ -1,17 +1,146 @@
 {% extends "base.html" %}
-{% block subtitle %}<p>Upcoming events, deadlines and student council meetings.</p>{% endblock %}
+{% block subtitle %}<p>Upcoming courses, events, deadlines and student council meetings.</p>{% endblock %}
 {% block content %}
-{% if data.events %}
-<ul class="cards">
-  {% for event in data.events | sort(attribute="date") %}
-  <li>
-    <h3>{{ event.title }}</h3>
-    <p class="meta">{{ event.date }}{% if event.location %} · {{ event.location }}{% endif %}</p>
-    {% if event.description %}<p>{{ event.description }}</p>{% endif %}
+{% if calendar.months %}
+<p class="legend">
+  <span class="chip course">Course</span>
+  <span class="chip event">Event</span>
+</p>
+
+<div class="cal-nav" hidden>
+  <button type="button" class="button secondary" data-cal="prev" aria-label="Previous month">&larr; Previous</button>
+  <span class="cal-title-group">
+    <strong id="cal-title" aria-live="polite"></strong>
+    <button type="button" class="today-btn" data-cal="today">Today</button>
+  </span>
+  <button type="button" class="button secondary" data-cal="next" aria-label="Next month">Next &rarr;</button>
+</div>
+
+{% for month in calendar.months %}
+<section class="month" data-month="{{ month.key }}" aria-labelledby="month-{{ loop.index }}">
+  <h2 id="month-{{ loop.index }}">{{ month.title }}</h2>
+  <div class="scroll">
+    <table class="cal">
+      <thead>
+        <tr>{% for name in calendar.weekdays %}<th scope="col">{{ name }}</th>{% endfor %}</tr>
+      </thead>
+      <tbody>
+        {% for week in month.weeks %}
+        <tr>
+          {% for cell in week %}
+          <td{% if cell.in_month %} data-date="{{ cell.day.isoformat() }}"{% endif %} class="{% if not cell.in_month %}outside{% endif %}{% if cell.day.weekday() >= 5 %} weekend{% endif %}">
+            {% if cell.in_month %}
+            <span class="num">{{ cell.day.day }}</span>
+            {% for chip in cell.chips %}
+            <span class="chip {{ chip.event.kind }}{% if not chip.starts %} cont{% endif %}{% if not chip.ends %} open{% endif %}" title="{{ chip.event.summary }}" data-tip="{{ chip.event.summary }}" tabindex="0">{% if chip.label %}{{ chip.event.title }}{% else %}&nbsp;{% endif %}</span>
+            {% endfor %}
+            {% endif %}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endfor %}
+
+<h2>All dates</h2>
+<ul class="agenda">
+  {% for e in calendar.agenda %}
+  <li class="{{ e.kind }}">
+    <p class="when">{{ e.when }}</p>
+    <div>
+      <h3>{% if e.link %}<a href="{{ e.link }}" rel="noopener">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}
+        {% if e.status %}<span class="badge">{{ e.status }}</span>{% endif %}</h3>
+      <p class="meta">
+        {{ [e.details, e.location, e.host] | select | join(" · ") }}
+      </p>
+    </div>
   </li>
   {% endfor %}
 </ul>
 {% else %}
 <p class="empty">No upcoming events yet – check back soon.</p>
 {% endif %}
+{% endblock %}
+{% block scripts %}
+<script>
+  (function () {
+    var months = Array.prototype.slice.call(document.querySelectorAll(".month"));
+    var nav = document.querySelector(".cal-nav");
+    if (!months.length || !nav) return;
+    var prev = nav.querySelector('[data-cal="prev"]');
+    var next = nav.querySelector('[data-cal="next"]');
+    var title = document.getElementById("cal-title");
+    var current = 0;
+
+    function show(i) {
+      current = Math.max(0, Math.min(months.length - 1, i));
+      months.forEach(function (m, j) { m.hidden = j !== current; });
+      title.textContent = months[current].querySelector("h2").textContent;
+      prev.disabled = current === 0;
+      next.disabled = current === months.length - 1;
+      try { history.replaceState(null, "", "#" + months[current].dataset.month); } catch (e) {}
+    }
+
+    // Open on the month in the URL, else the current month, else the first month with an event.
+    var key = location.hash.slice(1);
+    var now = new Date();
+    var thisMonth = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0");
+    var todayKey = thisMonth + "-" + String(now.getDate()).padStart(2, "0");
+    var todayCell = document.querySelector('td[data-date="' + todayKey + '"]');
+    if (todayCell) {
+      todayCell.classList.add("today");
+      todayCell.setAttribute("aria-current", "date");
+      todayCell.querySelector(".num").insertAdjacentHTML("beforeend", ' <span class="today-label">Today</span>');
+    }
+    var start = months.findIndex(function (m) { return m.dataset.month === key; });
+    if (start < 0) start = months.findIndex(function (m) { return m.dataset.month === thisMonth; });
+    if (start < 0) {
+      start = months.findIndex(function (m) { return m.querySelector(".chip"); });
+      if (start < 0) start = 0;
+    }
+
+    // Friendly hover/focus tooltip (replaces the browser's plain title popup).
+    var tip = document.createElement("div");
+    tip.className = "cal-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.hidden = true;
+    document.body.appendChild(tip);
+
+    function showTip(chip) {
+      tip.textContent = chip.dataset.tip;
+      tip.hidden = false;
+      var r = chip.getBoundingClientRect();
+      var w = tip.offsetWidth, h = tip.offsetHeight;
+      var left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width / 2 - w / 2));
+      var top = r.top - h - 8;
+      if (top < 8) top = r.bottom + 8;
+      tip.style.left = left + window.scrollX + "px";
+      tip.style.top = top + window.scrollY + "px";
+    }
+    function hideTip() { tip.hidden = true; }
+
+    document.querySelectorAll(".cal .chip").forEach(function (chip) {
+      chip.removeAttribute("title");
+      chip.setAttribute("aria-label", chip.dataset.tip);
+      chip.addEventListener("mouseenter", function () { showTip(chip); });
+      chip.addEventListener("focus", function () { showTip(chip); });
+      chip.addEventListener("mouseleave", hideTip);
+      chip.addEventListener("blur", hideTip);
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideTip(); });
+
+    nav.hidden = false;
+    document.body.classList.add("cal-js");
+    prev.addEventListener("click", function () { show(current - 1); });
+    next.addEventListener("click", function () { show(current + 1); });
+    var todayBtn = nav.querySelector('[data-cal="today"]');
+    var todayIndex = months.findIndex(function (m) { return m.dataset.month === thisMonth; });
+    if (todayIndex < 0) todayBtn.hidden = true;
+    else todayBtn.addEventListener("click", function () { show(todayIndex); });
+    show(start);
+  })();
+</script>
 {% endblock %}
