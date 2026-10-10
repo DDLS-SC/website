@@ -20,7 +20,7 @@ The official website of the **DDLS Student Council**, built by students for stud
 | **Calendar** | Upcoming events, deadlines and student council meetings |
 | **Join us** | Buttons to join the GitHub organisation and the WhatsApp group (links in `data/links.json`) |
 | **About** | What the Student Council does and how to participate |
-| **FAQ** | Common questions and answers (edit `data/faq.json`) |
+| **FAQs** | Common questions and answers (edit `data/faq.json`) |
 
 ## Roadmap
 
