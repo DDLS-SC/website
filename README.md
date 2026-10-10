@@ -17,6 +17,7 @@ The official website of the **DDLS Student Council**, built by students for stud
 | **Home** | Welcome message, news and announcements |
 | **Courses** | Course overviews, schedules, prerequisites, tips and resources from other students |
 | **Community** | Student council members, events, clubs, and how to get in touch |
+| **Calendar** | Upcoming events, deadlines and student council meetings |
 | **Join us on GitHub** | How to join the GitHub organisation, contribution guidelines, and open projects |
 | **About** | What the Student Council does and how to participate |
 
