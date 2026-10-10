@@ -10,7 +10,7 @@
   <body>
     <header class="site-header">
       <div class="container bar">
-        <a class="brand" href="index.html">{{ site.title }}</a>
+        <a class="brand" href="index.html">{{ site.brand or site.title }}</a>
         <nav aria-label="Site sections">
           {% for item in site.nav %}
           <a href="{{ item.page }}.html"{% if item.page == page.slug %} aria-current="page"{% endif %}>{{ item.label }}</a>

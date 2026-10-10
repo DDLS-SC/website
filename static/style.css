@@ -289,3 +289,25 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 .cal-tip[hidden] { display: none; }
 .cal .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ---------- Calendar filters (checkboxes toggle courses / events) ---------- */
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin: 0 0 1rem; padding: 0; border: 0; }
+.filters legend { float: left; margin-right: 0.75rem; padding: 0; color: var(--muted); font-size: 0.9rem; }
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+.filter.course { background: color-mix(in srgb, var(--accent) 22%, var(--bg)); border: 1px solid var(--accent); }
+.filter.event { background: color-mix(in srgb, var(--accent-2) 30%, var(--bg)); border: 1px solid var(--accent-2); }
+.filter:has(input:not(:checked)) { background: transparent; border-style: dashed; color: var(--muted); }
+.filter input { accent-color: var(--accent); }
+.cal-wrap:has(#show-course:not(:checked)) .chip.course,
+.cal-wrap:has(#show-course:not(:checked)) .agenda li.course,
+.cal-wrap:has(#show-event:not(:checked)) .chip.event,
+.cal-wrap:has(#show-event:not(:checked)) .agenda li.event { display: none; }

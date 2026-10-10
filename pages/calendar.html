@@ -2,10 +2,12 @@
 {% block subtitle %}<p>Upcoming courses, events, deadlines and student council meetings.</p>{% endblock %}
 {% block content %}
 {% if calendar.months %}
-<p class="legend">
-  <span class="chip course">Course</span>
-  <span class="chip event">Event</span>
-</p>
+<div class="cal-wrap">
+<fieldset class="filters">
+  <legend>Show on calendar</legend>
+  <label class="filter course"><input type="checkbox" id="show-course" checked> Courses</label>
+  <label class="filter event"><input type="checkbox" id="show-event" checked> Events</label>
+</fieldset>
 
 <div class="cal-nav" hidden>
   <button type="button" class="button secondary" data-cal="prev" aria-label="Previous month">&larr; Previous</button>
@@ -60,6 +62,7 @@
   </li>
   {% endfor %}
 </ul>
+</div>
 {% else %}
 <p class="empty">No upcoming events yet – check back soon.</p>
 {% endif %}

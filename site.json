@@ -1,16 +1,12 @@
 {
   "title": "DDLS Student Council",
+  "brand": "DDLS Student Council (Beta)",
   "tagline": "Courses, community and open source, by students for students.",
   "status": "Draft – launching soon",
   "nav": [
     {
       "page": "index",
       "label": "Home"
-    },
-    {
-      "page": "courses",
-      "label": "Courses",
-      "blurb": "Overviews, prerequisites and tips from fellow students."
     },
     {
       "page": "community",

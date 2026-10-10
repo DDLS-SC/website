@@ -15,7 +15,6 @@ The official website of the **DDLS Student Council**, built by students for stud
 | Section | What it will contain |
 | --- | --- |
 | **Home** | Welcome message, news and announcements |
-| **Courses** | Course overviews, schedules, prerequisites, tips and resources from other students |
 | **Community** | Student council members, events, clubs, and how to get in touch |
 | **Calendar** | Upcoming events, deadlines and student council meetings |
 | **Join us** | Buttons to join the GitHub organisation and the WhatsApp group (links in `data/links.json`) |
@@ -40,9 +39,11 @@ A static site generated with Python and [Jinja2](https://jinja.palletsprojects.c
 
 ```text
 site.json        Site title, tagline, status badge and the navigation menu
-pages/           One template per page (index.html, courses.html, ...)
+pages/           One template per page (index.html, calendar.html, ...)
 templates/       base.html: shared header, navigation and footer
-data/            JSON content: courses, events, members, news
+data/            JSON content: members, site contacts, links, FAQs, news
+course/          Courses per term (e.g. 2026HT_courses.json), shown on the Calendar
+event/           Events per term (e.g. 2026HT_events.json), shown on the Calendar
 static/          CSS and other files copied as-is
 build.py         Builds everything into dist/ (not committed)
 ```
