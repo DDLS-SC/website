@@ -25,11 +25,12 @@
   <div class="scroll">
     <table class="cal">
       <thead>
-        <tr>{% for name in calendar.weekdays %}<th scope="col">{{ name }}</th>{% endfor %}</tr>
+        <tr><th scope="col" class="wk"><abbr title="ISO week number">Wk</abbr></th>{% for name in calendar.weekdays %}<th scope="col">{{ name }}</th>{% endfor %}</tr>
       </thead>
       <tbody>
         {% for week in month.weeks %}
         <tr>
+          <th scope="row" class="wk">{{ week[0].day.isocalendar()[1] }}</th>
           {% for cell in week %}
           <td{% if cell.in_month %} data-date="{{ cell.day.isoformat() }}"{% endif %} class="{% if not cell.in_month %}outside{% endif %}{% if cell.day.weekday() >= 5 %} weekend{% endif %}">
             {% if cell.in_month %}

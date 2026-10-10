@@ -313,3 +313,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .cal-wrap:has(#show-event:not(:checked)) .agenda li.event { display: none; }
 
 .filters .ics { margin-left: auto; padding: 0.35rem 1rem; font-size: 0.9rem; }
+
+/* ---------- Week numbers ---------- */
+.cal th.wk { width: 2.75rem; padding: 0.4rem 0.25rem; text-align: center; font-weight: 500; color: var(--muted); font-size: 0.8rem; }
+.cal tbody th.wk { vertical-align: top; background: var(--surface); border: 1px solid var(--border); }
+.cal th.wk abbr { text-decoration: none; cursor: help; }
