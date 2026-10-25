@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block subtitle %}<p>Connect with other students and contribute to student-led projects.</p>{% endblock %}
 {% block content %}
+{% set form_url = data.links.application_form %}
+{% set form_embed = form_url ~ ("&" if "?" in form_url else "?") ~ "embedded=true" if form_url else "" %}
 {% macro join_card(title, text, label, url) %}
 <div class="card">
   <h3>{{ title }}</h3>
@@ -8,30 +10,30 @@
   {% if url %}
   <a class="button" href="{{ url }}" rel="noopener">{{ label }}</a>
   {% else %}
-  <span class="button disabled" aria-disabled="true">Link coming soon</span>
+  <a class="button secondary" href="#apply">Request an invitation</a>
   {% endif %}
 </div>
 {% endmacro %}
 
 <div class="cards">
-  {{ join_card("GitHub organisation", "Contribute to open, student-led projects, including this website.", "Join on GitHub", data.links.github) }}
-  {{ join_card("WhatsApp group", "Chat with fellow students and get news as it happens.", "Join the WhatsApp group", data.links.whatsapp) }}
+  {{ join_card("GitHub organisation", "Contribute to open, student-led projects, including this website. There is no public join link; invitations are sent internally after you apply.", "Join on GitHub", data.links.github) }}
+  {{ join_card("WhatsApp group", "Chat with fellow students and get news as it happens. There is no public join link; invitations are sent internally after you apply.", "Join the WhatsApp group", data.links.whatsapp) }}
 </div>
 
-<h2>Apply to join</h2>
+<h2 id="apply">Apply to join</h2>
 <p>
-  Membership of the GitHub organisation is by invitation. Fill in the short application below and
-  a council member will review it and send an invitation to your GitHub username.
+  GitHub organisation and WhatsApp group access is by invitation. Fill in the application below to
+  request access. A community member will review it internally and send you the invitations.
 </p>
 <div class="faq">
   <details>
     <summary>Open the application form</summary>
-    {% if data.links.application_form %}
-    <iframe class="form-embed" src="{{ data.links.application_form }}" title="Application form" loading="lazy">
+    {% if form_url %}
+    <iframe class="form-embed" src="{{ form_embed }}" title="Application form" loading="lazy">
       Loading&hellip;
     </iframe>
     <p class="meta">
-      Form not showing? <a href="{{ data.links.application_form }}" rel="noopener">Open it in a new tab</a>.
+      Form not showing? <a href="{{ form_url }}" target="_blank" rel="noopener">Open it in a new tab</a>.
       We use your answers only to review your application and delete them if it is not accepted.
     </p>
     {% else %}
