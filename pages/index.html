@@ -5,11 +5,6 @@
     <div class="hero-text">
       <h1>{{ site.title }}</h1>
       <p class="lede">{{ site.tagline }}</p>
-      <ul class="hero-facts">
-        <li><strong>{{ data.site_contacts | length }}</strong> sites</li>
-        <li><strong>{{ calendar.agenda | selectattr("kind", "eq", "course") | list | length }}</strong> courses on the calendar</li>
-        <li><strong>{{ data.members | length }}</strong> council members</li>
-      </ul>
       <div class="actions">
         <a class="button" href="join.html">Join the community</a>
         <a class="button ghost" href="calendar.html">See the calendar</a>
@@ -29,8 +24,10 @@
       <h2>Coming up</h2>
       <a class="text-link" href="calendar.html">Full calendar</a>
     </header>
-    {% if upcoming %}
-    <ol class="upcoming" data-upcoming>
+    {% if calendar.agenda %}
+    {% set past = calendar.agenda | selectattr("end", "lt", today) | list | reverse | list %}
+    {% set n_recent = [4 - (upcoming[:4] | length), 0] | max %}
+    <ol class="upcoming" data-list="upcoming">
       {% for e in calendar.agenda %}
       <li class="{{ e.kind }}" data-end="{{ e.end.isoformat() }}"{% if e not in upcoming[:4] %} hidden{% endif %}>
         <time class="date-block" datetime="{{ e.start.isoformat() }}">
@@ -44,7 +41,24 @@
       </li>
       {% endfor %}
     </ol>
-    <p class="panel-foot">Never miss a date: <a href="calendar.ics" download="ddls-calendar.ics">add the calendar to Outlook, Google or Apple Calendar</a>.</p>
+    <div class="recent"{% if not n_recent or not past %} hidden{% endif %}>
+      <h3 class="list-label">Recently</h3>
+      <ol class="upcoming" data-list="recent">
+        {% for e in calendar.agenda | reverse %}
+        <li class="{{ e.kind }}" data-end="{{ e.end.isoformat() }}"{% if e not in past[:n_recent] %} hidden{% endif %}>
+        <time class="date-block" datetime="{{ e.start.isoformat() }}">
+          <span class="day">{{ e.start.day }}</span>
+          <span class="month">{{ e.start.strftime("%b") }}</span>
+        </time>
+        <div>
+          <h3>{% if e.link %}<a href="{{ e.link }}" rel="noopener">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
+          <p class="meta"><span class="tag {{ e.kind }}">{{ "Course" if e.kind == "course" else "Event" }}</span> {{ e.when }}{% if e.location %}, {{ e.location }}{% endif %}</p>
+        </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <p class="panel-foot">Never miss a date: <a href="calendar.ics" download="ddls-calendar.ics">add it to your own calendar</a>.</p>
     {% else %}
     <p class="empty">Nothing scheduled yet. New courses and events appear here as soon as they are added.</p>
     {% endif %}
@@ -68,6 +82,7 @@
     {% else %}
     <p class="empty">No news yet.</p>
     {% endif %}
+    <p class="panel-foot">Have news for DDLS PhD students? <a href="about.html">Get in touch with the council</a>.</p>
   </section>
 </div>
 
@@ -84,17 +99,27 @@
 {% endblock %}
 {% block scripts %}
 <script>
-  // The site is built when someone pushes, so re-check "Coming up" against today's date in the browser.
+  // The site is built when someone pushes, so re-check the lists against today's date in the browser:
+  // up to four upcoming items, topped up with the most recent past ones.
   (function () {
-    var list = document.querySelector("[data-upcoming]");
-    if (!list) return;
+    var up = document.querySelector('[data-list="upcoming"]');
+    var recent = document.querySelector('[data-list="recent"]');
+    if (!up || !recent) return;
     var today = new Date().toISOString().slice(0, 10);
     var shown = 0;
-    Array.prototype.forEach.call(list.children, function (li) {
+    Array.prototype.forEach.call(up.children, function (li) {
       var keep = li.dataset.end >= today && shown < 4;
       li.hidden = !keep;
       if (keep) shown++;
     });
+    var room = 4 - shown, added = 0;
+    Array.prototype.forEach.call(recent.children, function (li) {
+      var keep = li.dataset.end < today && added < room;
+      li.hidden = !keep;
+      if (keep) added++;
+    });
+    recent.parentElement.hidden = added === 0;
+    up.hidden = shown === 0;
   })();
 </script>
 {% endblock %}
