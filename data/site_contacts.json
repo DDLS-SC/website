@@ -2,31 +2,43 @@
   {
     "name": "Andrea Garcia",
     "site": "Stockholm",
-    "email": "andrea.garcia.navarro@ki.se"
+    "email": "andrea.garcia.navarro@ki.se",
+    "lat": 59.33,
+    "lon": 18.07
   },
   {
     "name": "Olle Edgren Schüllerqvist",
     "site": "Uppsala",
-    "email": "olle.edgren.schullerqvist@it.uu.se"
+    "email": "olle.edgren.schullerqvist@it.uu.se",
+    "lat": 59.86,
+    "lon": 17.64
   },
   {
     "name": "Axel Josefsson",
     "site": "Linköping",
-    "email": "axel.josefsson@predictme.se"
+    "email": "axel.josefsson@predictme.se",
+    "lat": 58.41,
+    "lon": 15.62
   },
   {
     "name": "Vasilina Akulova",
     "site": "Umeå",
-    "email": "vasilina.akulova@slu.se"
+    "email": "vasilina.akulova@slu.se",
+    "lat": 63.83,
+    "lon": 20.26
   },
   {
     "name": "Marina Masliakova",
     "site": "Gothenburg",
-    "email": "marina.masliakova@gu.se"
+    "email": "marina.masliakova@gu.se",
+    "lat": 57.71,
+    "lon": 11.97
   },
   {
     "name": "Markus Heidrich",
     "site": "Lund",
-    "email": "markus.heidrich@immun.lth.se"
+    "email": "markus.heidrich@immun.lth.se",
+    "lat": 55.7,
+    "lon": 13.19
   }
 ]

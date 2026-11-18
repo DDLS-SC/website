@@ -1,28 +1,34 @@
 {% extends "base.html" %}
-{% macro mail(name, email) %}<a class="mail" href="mailto:{{ email }}" title="Email {{ name }}" aria-label="Email {{ name }}"><svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>{% endmacro %}
 {% block subtitle %}<p>What the DDLS Student Council does and how you can take part.</p>{% endblock %}
 {% block content %}
-<p>
-  The DDLS Student Council represents students and helps them take part in university life.
-  This page will describe what we do and how you can participate.
-</p>
+<div class="prose">
+  <p class="lead">
+    The DDLS Student Council represents students and helps them take part in university life.
+    This page will describe what we do and how you can participate.
+  </p>
+</div>
 
 <h2>Current Council Members</h2>
 {% if data.members %}
-{% set ns = namespace(role=None) %}
-{% for member in data.members %}
-{% if member.role != ns.role %}
-{% if ns.role is not none %}</ul>{% endif %}
-<h3>{{ member.role }}s</h3>
-<ul class="people">
-{% set ns.role = member.role %}
-{% endif %}
-  <li>
-    <strong>{{ member.name }}</strong> ({{ member.affiliation }})
-    {{ mail(member.name, member.email) }}
-  </li>
+{% set ns = namespace(roles=[]) %}
+{% for m in data.members if m.role not in ns.roles %}{% set ns.roles = ns.roles + [m.role] %}{% endfor %}
+{% for role in ns.roles %}
+<section class="role-group">
+  <h3>{{ role }}{{ "s" if data.members | selectattr("role", "eq", role) | list | length > 1 }}</h3>
+  <ul class="people-grid">
+    {% for member in data.members if member.role == role %}
+    <li class="person">
+      <span class="avatar" aria-hidden="true">{{ ui.initials(member.name) }}</span>
+      <div>
+        <p class="name">{{ member.name }}</p>
+        <p class="meta">{{ member.affiliation }}</p>
+      </div>
+      {% if member.email %}{{ ui.mail(member.name, member.email) }}{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 {% endfor %}
-</ul>
 {% else %}
 <p class="empty">Council members will be listed here soon.</p>
 {% endif %}

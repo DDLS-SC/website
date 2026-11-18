@@ -11,6 +11,7 @@ import http.server
 import json
 import shutil
 import sys
+from datetime import date
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -51,6 +52,8 @@ def build():
         trim_blocks=True,
         lstrip_blocks=True,
     )
+    # {{ "2026-10-10" | nice_date }} -> "10 October 2026"
+    env.filters["nice_date"] = lambda value: f"{date.fromisoformat(str(value)):%-d %B %Y}"
 
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -61,7 +64,7 @@ def build():
     for slug in sorted(pages):
         page = {"slug": slug, "label": labels[slug]}
         html = env.get_template(f"{slug}.html").render(
-            site=site, data=data, page=page, calendar=calendar_view
+            site=site, data=data, page=page, calendar=calendar_view, today=date.today()
         )
         (DIST / f"{slug}.html").write_text(html, encoding="utf-8")
     if calendar_view["agenda"]:

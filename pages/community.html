@@ -1,24 +1,29 @@
 {% extends "base.html" %}
-{% macro mail(name, email) %}<a class="mail" href="mailto:{{ email }}" title="Email {{ name }}" aria-label="Email {{ name }}"><svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>{% endmacro %}
 {% block subtitle %}<p>Meet the site communities and find out how to get in touch.</p>{% endblock %}
 {% block content %}
-<p>
-  We currently have {{ data.site_contacts|length }} site communities:
-  {{ data.site_contacts | map(attribute="site") | join(", ") }}.
-  To get involved locally, please contact the local contact person for your site.
-</p>
-<p>
-  Clubs, events and other ways to take part will appear here soon. You can also
-  <a href="join.html">request an invitation to the student community</a>.
-</p>
+<div class="community-intro">
+  <div class="prose">
+    <p class="lead">
+      We currently have {{ data.site_contacts|length }} site communities:
+      {{ data.site_contacts | map(attribute="site") | join(", ") }}.
+      To get involved locally, please contact the local contact person for your site.
+    </p>
+    <p>
+      Clubs, events and other ways to take part will appear here soon. You can also
+      <a href="join.html">request an invitation to the student community</a>.
+    </p>
+  </div>
+  <div class="community-map">{{ ui.site_map(data.site_contacts) }}</div>
+</div>
 
 <h2>Local contact persons</h2>
 {% if data.site_contacts %}
-<ul class="people">
+<ul class="site-list">
   {% for contact in data.site_contacts %}
-  <li>
-    <strong>{{ contact.site }}</strong> — {{ contact.name }}
-    {{ mail(contact.name, contact.email) }}
+  <li id="site-{{ contact.site | lower }}">
+    <h3>{{ contact.site }}</h3>
+    <p>{{ contact.name }}</p>
+    {% if contact.email %}<a class="text-link" href="mailto:{{ contact.email }}">Email {{ contact.name.split()[0] }}</a>{% endif %}
   </li>
   {% endfor %}
 </ul>

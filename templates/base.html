@@ -1,17 +1,39 @@
+{% import "macros.html" as ui %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% set page_title %}{% if page.label != "Home" %}{{ page.label }} – {% endif %}{{ site.title }}{% endset %}
+    <title>{{ page_title }}</title>
     <meta name="description" content="{{ site.tagline }}" />
-    <title>{% if page.label != "Home" %}{{ page.label }} – {% endif %}{{ site.title }}</title>
+    <meta name="theme-color" content="#033e44" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="fonts/SchibstedGrotesk-VF.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="style.css" />
+    {# Link previews when the site is shared on Slack, WhatsApp, LinkedIn, ... #}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ page_title }}" />
+    <meta property="og:description" content="{{ site.tagline }}" />
+    {% if site.url %}
+    <meta property="og:url" content="{{ site.url }}{% if page.slug != 'index' %}{{ page.slug }}.html{% endif %}" />
+    <meta property="og:image" content="{{ site.url }}og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {% endif %}
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container bar">
-        <a class="brand" href="index.html">{{ site.brand or site.title }}</a>
-        <nav aria-label="Site sections">
+        <a class="brand" href="index.html">
+          <img src="favicon.svg" alt="" width="32" height="37" />
+          <span>{{ site.brand or site.title }}</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+          <span class="bars" aria-hidden="true"></span><span class="label">Menu</span>
+        </button>
+        <nav id="site-nav" aria-label="Site sections">
           {% for item in site.nav %}
           <a href="{{ item.page }}.html"{% if item.page == page.slug %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {% endfor %}
@@ -28,16 +50,59 @@
     </section>
     {% endblock %}
 
-    <main class="container">
+    <main id="main" class="container">
       {% block content %}{% endblock %}
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <span>&copy; {{ site.title }}</span>
+      <div class="container footer-grid">
+        <div class="footer-about">
+          <p class="footer-title">{{ site.title }}</p>
+          <p>{{ site.tagline }}</p>
+          <p class="meta">Run by PhD students in the SciLifeLab &amp; Wallenberg National Program for Data-Driven Life Science (DDLS).</p>
+        </div>
+        <div>
+          <p class="footer-title">Pages</p>
+          <ul>
+            {% for item in site.nav %}<li><a href="{{ item.page }}.html">{{ item.label }}</a></li>{% endfor %}
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Sites</p>
+          <ul>
+            {% for s in data.site_contacts %}<li><a href="community.html#site-{{ s.site | lower }}">{{ s.site }}</a></li>{% endfor %}
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Elsewhere</p>
+          <ul>
+            <li><a href="https://www.scilifelab.se/data-driven/" rel="noopener">DDLS at SciLifeLab</a></li>
+            <li><a href="https://github.com/DDLS-SC/website" rel="noopener">This website on GitHub</a></li>
+            {% if calendar.agenda %}<li><a href="calendar.ics" download="ddls-calendar.ics">Subscribe to the calendar</a></li>{% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-base">
+        <span>&copy; {{ today.year }} {{ site.title }}</span>
         {% if site.status %}<span class="badge">{{ site.status }}</span>{% endif %}
       </div>
     </footer>
+
+    <script>
+      // Collapse the navigation into a menu button on narrow screens.
+      (function () {
+        var btn = document.querySelector(".nav-toggle");
+        var nav = document.getElementById("site-nav");
+        if (!btn || !nav) return;
+        document.documentElement.classList.add("js-nav");
+        btn.hidden = false;
+        btn.addEventListener("click", function () {
+          var open = btn.getAttribute("aria-expanded") !== "true";
+          btn.setAttribute("aria-expanded", String(open));
+          nav.classList.toggle("open", open);
+        });
+      })();
+    </script>
     {% block scripts %}{% endblock %}
   </body>
 </html>
