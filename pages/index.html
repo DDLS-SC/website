@@ -5,10 +5,11 @@
     <div class="hero-text">
       <h1>{{ site.title }}</h1>
       <p class="lede">{{ site.tagline }}</p>
-      <p class="hero-sites">
-        {{ data.site_contacts | length }} sites, one community:
-        {{ data.site_contacts | map(attribute="site") | join(", ") }}.
-      </p>
+      <ul class="hero-facts">
+        <li><strong>{{ data.site_contacts | length }}</strong> sites</li>
+        <li><strong>{{ calendar.agenda | selectattr("kind", "eq", "course") | list | length }}</strong> courses on the calendar</li>
+        <li><strong>{{ data.members | length }}</strong> council members</li>
+      </ul>
       <div class="actions">
         <a class="button" href="join.html">Join the community</a>
         <a class="button ghost" href="calendar.html">See the calendar</a>
@@ -22,67 +23,64 @@
 {% endblock %}
 {% block content %}
 {% set upcoming = calendar.agenda | selectattr("end", "ge", today) | list %}
-<section class="section split">
-  <div class="section-head">
-    <h2>Coming up</h2>
-    <p>Courses and events across the DDLS sites.</p>
-    <a class="text-link" href="calendar.html">Full calendar</a>
-  </div>
-  {% if upcoming %}
-  <ol class="upcoming" data-upcoming>
-    {% for e in calendar.agenda %}
-    <li class="{{ e.kind }}" data-end="{{ e.end.isoformat() }}"{% if e not in upcoming[:3] %} hidden{% endif %}>
-      <time class="date-block" datetime="{{ e.start.isoformat() }}">
-        <span class="day">{{ e.start.day }}</span>
-        <span class="month">{{ e.start.strftime("%b") }}</span>
-      </time>
-      <div>
-        <p class="kind">{{ "Course" if e.kind == "course" else "Event" }}</p>
-        <h3>{% if e.link %}<a href="{{ e.link }}" rel="noopener">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
-        <p class="meta">{{ e.when }}{% if e.location %}, {{ e.location }}{% endif %}</p>
-      </div>
-    </li>
-    {% endfor %}
-  </ol>
-  {% else %}
-  <p class="empty">Nothing scheduled yet. New courses and events appear here as soon as they are added.</p>
-  {% endif %}
-</section>
+<div class="home-grid">
+  <section class="panel">
+    <header class="panel-head">
+      <h2>Coming up</h2>
+      <a class="text-link" href="calendar.html">Full calendar</a>
+    </header>
+    {% if upcoming %}
+    <ol class="upcoming" data-upcoming>
+      {% for e in calendar.agenda %}
+      <li class="{{ e.kind }}" data-end="{{ e.end.isoformat() }}"{% if e not in upcoming[:4] %} hidden{% endif %}>
+        <time class="date-block" datetime="{{ e.start.isoformat() }}">
+          <span class="day">{{ e.start.day }}</span>
+          <span class="month">{{ e.start.strftime("%b") }}</span>
+        </time>
+        <div>
+          <h3>{% if e.link %}<a href="{{ e.link }}" rel="noopener">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
+          <p class="meta"><span class="tag {{ e.kind }}">{{ "Course" if e.kind == "course" else "Event" }}</span> {{ e.when }}{% if e.location %}, {{ e.location }}{% endif %}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="panel-foot">Never miss a date: <a href="calendar.ics" download="ddls-calendar.ics">add the calendar to Outlook, Google or Apple Calendar</a>.</p>
+    {% else %}
+    <p class="empty">Nothing scheduled yet. New courses and events appear here as soon as they are added.</p>
+    {% endif %}
+  </section>
 
-<section class="section split">
-  <div class="section-head">
-    <h2>News</h2>
-    <p>Announcements for DDLS PhD students.</p>
-  </div>
-  {% if data.news %}
-  <ul class="news">
-    {% for item in data.news %}
-    <li>
-      <time class="meta" datetime="{{ item.date }}">{{ item.date | nice_date }}</time>
-      <h3>{{ item.title }}</h3>
-      {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
-      {% if item.link %}<a class="text-link" href="{{ item.link }}" rel="noopener">{{ item.link_label or "Read more" }}</a>{% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p class="empty">No news yet.</p>
-  {% endif %}
-</section>
+  <section class="panel">
+    <header class="panel-head">
+      <h2>News</h2>
+    </header>
+    {% if data.news %}
+    <ul class="news">
+      {% for item in data.news[:3] %}
+      <li>
+        <time class="meta" datetime="{{ item.date }}">{{ item.date | nice_date }}</time>
+        <h3>{{ item.title }}</h3>
+        {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+        {% if item.link %}<a class="button small" href="{{ item.link }}" rel="noopener">{{ item.link_label or "Read more" }}</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">No news yet.</p>
+    {% endif %}
+  </section>
+</div>
 
-<section class="section split">
-  <div class="section-head">
-    <h2>Find your way</h2>
-  </div>
-  <ul class="directory">
-    {% for item in site.nav if item.page != "index" %}
-    <li>
-      <a href="{{ item.page }}.html">{{ item.label }}</a>
-      <p>{{ item.blurb }}</p>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+<ul class="tiles">
+  {% for item in site.nav if item.page != "index" %}
+  <li class="tile tile-{{ loop.index }}">
+    <a href="{{ item.page }}.html">
+      <span class="tile-title">{{ item.label }}</span>
+      <span class="tile-text">{{ item.blurb }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}
 {% block scripts %}
 <script>
@@ -93,7 +91,7 @@
     var today = new Date().toISOString().slice(0, 10);
     var shown = 0;
     Array.prototype.forEach.call(list.children, function (li) {
-      var keep = li.dataset.end >= today && shown < 3;
+      var keep = li.dataset.end >= today && shown < 4;
       li.hidden = !keep;
       if (keep) shown++;
     });
