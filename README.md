@@ -62,7 +62,9 @@ python build.py --serve               # http://localhost:8000
 
 - **Add a course, event, member or news item:** edit the matching file in `data/` (each is a JSON list; the page templates show the fields they use).
 - **Add a page:** create `pages/<name>.html` that extends `base.html`, then add `{ "page": "<name>", "label": "..." }` to `nav` in `site.json`. The build stops with a clear error if the two get out of sync.
-- **Change the look:** edit `static/style.css`; colours live in the variables at the top.
+- **Change the look:** edit `static/style.css`; colours (SciLifeLab/DDLS palette) live in the variables at the top. The font is Schibsted Grotesk, self-hosted in `static/fonts/` (SIL Open Font License), so no visitor data goes to Google.
+- **The site map** on the home and Community pages is drawn from `lat`/`lon` in `data/site_contacts.json`. A new site with coordinates appears on the map automatically; shared pieces like the map live in `templates/macros.html`.
+- **Link previews:** `static/og-image.png` is the image shown when the site is shared; `site.json` → `url` must be the live address.
 
 ## Contributing
 
