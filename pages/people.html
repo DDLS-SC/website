@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Find DDLS PhD students by site, research topic and skills.</p>{% endblock %}
+{% block content %}
+{% set people = data.people | sort(attribute="name") %}
+<div data-filter-root>
+  <div class="page-intro">
+    <p class="lead">The directory is opt-in: only students who add themselves are listed, and you can ask to be removed at any time.</p>
+    <a class="button" href="{{ ui.issue_url(site, 'add-profile') }}" rel="noopener">Add your profile</a>
+  </div>
+
+  <div class="toolbar">
+    {{ ui.search_box("Search names, topics, skills…") }}
+    {{ ui.select_filter(people, "site", "Site", "All sites") }}
+    <span class="count" data-count aria-live="polite">{{ people | length }} shown</span>
+  </div>
+
+  {% if people %}
+  <ul class="profiles">
+    {% for p in people %}
+    <li class="profile" data-item data-site="{{ p.site }}"
+        data-search="{{ [p.name, p.topic, p.skills | join(' '), p.site, p.affiliation] | join(' ') }}">
+      <div class="profile-head">
+        <span class="avatar uni-{{ p.affiliation.split('/')[0] | lower }}" aria-hidden="true">{{ ui.initials(p.name) }}</span>
+        <div>
+          <h3>{{ p.name }} {{ ui.example_badge(p) }}</h3>
+          <p class="meta">{{ p.site }}, {{ p.affiliation }}{% if p.started %}, PhD since {{ p.started }}{% endif %}</p>
+        </div>
+      </div>
+      <p class="topic">{{ p.topic }}</p>
+      {% if p.skills %}
+      <ul class="tags">
+        {% for s in p.skills %}<li><button type="button" data-search-for="{{ s }}">{{ s }}</button></li>{% endfor %}
+      </ul>
+      {% endif %}
+      <p class="profile-links">
+        {% if p.email %}{{ ui.mail(p.name, p.email) }}{% endif %}
+        {% if p.orcid %}{{ ui.orcid(p.orcid) }}{% endif %}
+        {% if p.website %}<a class="text-link" href="{{ p.website }}" rel="noopener">Website</a>{% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="empty" data-empty hidden>Nobody matches that search yet. Try a broader skill or another site.</p>
+  {% else %}
+  <p class="empty">No profiles yet. <a href="{{ ui.issue_url(site, 'add-profile') }}">Add yours</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}
+{% block scripts %}<script src="filter.js"></script>{% endblock %}

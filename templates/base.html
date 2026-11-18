@@ -35,7 +35,7 @@
         </button>
         <nav id="site-nav" aria-label="Site sections">
           {% for item in site.nav %}
-          <a href="{{ item.page }}.html"{% if item.page == page.slug %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <a href="{{ item.page }}.html"{% if item.cta %} class="nav-cta"{% endif %}{% if item.page == page.slug %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {% endfor %}
         </nav>
       </div>

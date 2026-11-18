@@ -1,0 +1,52 @@
+name: Add a publication
+description: Add your paper or preprint to the Research page. We only need the DOI; the rest is filled in from Crossref.
+title: "[Publication] "
+labels: ["publication"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your work! A website maintainer will check the entry and add it, usually within a week.
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      description: For example 10.1038/s41586-021-03819-2. For a preprint without a DOI, paste its link in "Preprint link" instead.
+      placeholder: 10.xxxx/xxxxx
+  - type: input
+    id: students
+    attributes:
+      label: DDLS PhD students among the authors
+      description: Names exactly as they appear on the paper, separated by semicolons. These are highlighted on the page.
+    validations:
+      required: true
+  - type: dropdown
+    id: site
+    attributes:
+      label: Site
+      options: [Stockholm, Uppsala, Linköping, Umeå, Gothenburg, Lund]
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: DDLS research area
+      options:
+        - Cell and molecular biology
+        - Evolution and biodiversity
+        - Precision medicine and diagnostics
+        - Epidemiology and biology of infection
+    validations:
+      required: true
+  - type: input
+    id: preprint
+    attributes:
+      label: Preprint link (optional)
+  - type: input
+    id: code
+    attributes:
+      label: Code link (optional)
+  - type: input
+    id: data
+    attributes:
+      label: Data link (optional)

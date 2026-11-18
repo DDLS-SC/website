@@ -1,0 +1,82 @@
+[
+  {
+    "example": true,
+    "type": "collaboration",
+    "title": "Example: Looking for someone with spatial statistics experience",
+    "description": "I have spatial transcriptomics data from mouse brain and want to test for cell-type co-localisation. Happy to share data and co-author.",
+    "tags": [
+      "spatial omics",
+      "statistics"
+    ],
+    "site": "Stockholm",
+    "contact_name": "A. Student",
+    "contact_email": "a.student@example.se",
+    "posted": "2026-11-10",
+    "expires": "2027-01-31",
+    "link": ""
+  },
+  {
+    "example": true,
+    "type": "skill-swap",
+    "title": "Example: Nextflow for PyTorch",
+    "description": "I can teach you to build Nextflow pipelines. In return I'd like help getting started with PyTorch for image data.",
+    "tags": [
+      "Nextflow",
+      "PyTorch",
+      "workflows"
+    ],
+    "site": "Uppsala",
+    "contact_name": "D. Student",
+    "contact_email": "d.student@example.se",
+    "posted": "2026-11-05",
+    "expires": "2026-12-31",
+    "link": ""
+  },
+  {
+    "example": true,
+    "type": "position",
+    "title": "Example: Summer research assistant in single-cell genomics",
+    "description": "Our lab is looking for a master's student for an 8-week summer project. DDLS students welcome to share with their networks.",
+    "tags": [
+      "single-cell",
+      "summer"
+    ],
+    "site": "Lund",
+    "contact_name": "I. Student",
+    "contact_email": "i.student@example.se",
+    "posted": "2026-10-28",
+    "expires": "2027-02-15",
+    "link": "https://www.scilifelab.se/"
+  },
+  {
+    "example": true,
+    "type": "hackathon",
+    "title": "Example: Team for the BioHackathon in March",
+    "description": "Forming a team of 3–4 for a biodiversity data challenge. Any background welcome.",
+    "tags": [
+      "hackathon",
+      "biodiversity"
+    ],
+    "site": "Gothenburg",
+    "contact_name": "F. Student",
+    "contact_email": "f.student@example.se",
+    "posted": "2026-11-12",
+    "expires": "2027-03-01",
+    "link": ""
+  },
+  {
+    "example": true,
+    "type": "collaboration",
+    "title": "Example: Expired post (hidden automatically)",
+    "description": "This post expired and should not be shown.",
+    "tags": [
+      "test"
+    ],
+    "site": "Umeå",
+    "contact_name": "X",
+    "contact_email": "x@example.se",
+    "posted": "2026-01-01",
+    "expires": "2026-02-01",
+    "link": ""
+  }
+]

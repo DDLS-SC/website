@@ -1,0 +1,69 @@
+name: Post an opportunity
+description: Look for collaborators, offer a skill swap, share an open position or form a hackathon team.
+title: "[Opportunity] "
+labels: ["opportunity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Your post will appear on the Collaborate page after a maintainer has checked it, and disappears automatically on the expiry date.
+        Your name and email address will be shown publicly on the post.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of post
+      options: [Collaboration, Skill swap, Open position, Hackathon team]
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: One line, for example "Looking for someone with spatial statistics experience".
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Two or three sentences. What do you have, what are you looking for?
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Separated by commas, for example "single-cell, R, statistics".
+  - type: dropdown
+    id: site
+    attributes:
+      label: Site
+      options: [Stockholm, Uppsala, Linköping, Umeå, Gothenburg, Lund, Any site]
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact name and email
+      placeholder: Jane Doe, jane.doe@uni.se
+    validations:
+      required: true
+  - type: input
+    id: expires
+    attributes:
+      label: Show the post until
+      description: Date as YYYY-MM-DD. At most six months ahead.
+      placeholder: "2027-03-31"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link for more information (optional)
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I agree that my name and email address are shown publicly on the website until the post expires.
+          required: true

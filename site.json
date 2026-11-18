@@ -3,6 +3,13 @@
   "brand": "DDLS Student Community (Beta)",
   "tagline": "Courses, community and open source, by students for students.",
   "url": "https://ddls-sc.github.io/website/",
+  "repo": "https://github.com/DDLS-SC/website",
+  "research_areas": [
+    "Cell and molecular biology",
+    "Evolution and biodiversity",
+    "Precision medicine and diagnostics",
+    "Epidemiology and biology of infection"
+  ],
   "status": "Draft – launching soon",
   "nav": [
     {
@@ -10,9 +17,22 @@
       "label": "Home"
     },
     {
-      "page": "community",
-      "label": "Community",
-      "blurb": "Six site communities and how to get in touch."
+      "page": "research",
+      "label": "Research",
+      "blurb": "Publications and preprints by DDLS PhD students.",
+      "featured": true
+    },
+    {
+      "page": "collaborate",
+      "label": "Collaborate",
+      "blurb": "Find collaborators, swap skills and see open positions.",
+      "featured": true
+    },
+    {
+      "page": "people",
+      "label": "People",
+      "blurb": "Find DDLS PhD students by site, topic and skills.",
+      "featured": true
     },
     {
       "page": "calendar",
@@ -20,9 +40,10 @@
       "blurb": "Deadlines, meetings and upcoming events."
     },
     {
-      "page": "join",
-      "label": "Join us",
-      "blurb": "Request an invitation to GitHub and WhatsApp."
+      "page": "community",
+      "label": "Community",
+      "blurb": "Six site communities and how to get in touch.",
+      "featured": true
     },
     {
       "page": "about",
@@ -33,6 +54,12 @@
       "page": "faq",
       "label": "FAQs",
       "blurb": "Answers to common questions."
+    },
+    {
+      "page": "join",
+      "label": "Join us",
+      "blurb": "Request an invitation to GitHub and WhatsApp.",
+      "cta": true
     }
   ]
 }
