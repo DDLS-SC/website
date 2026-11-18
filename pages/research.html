@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Papers and preprints by DDLS PhD students, across all sites and research areas.</p>{% endblock %}
+{% block content %}
+{% set pubs = data.publications | sort(attribute="date", reverse=true) %}
+<div data-filter-root>
+  <div class="page-intro">
+    <p class="lead">Published something? Add it with its DOI and we'll fill in the rest.</p>
+    <a class="button" href="{{ ui.issue_url(site, 'add-publication') }}" rel="noopener">Add your paper</a>
+  </div>
+
+  <ul class="area-cards" aria-label="Filter by research area">
+    {% for area in site.research_areas %}
+    {% set n = pubs | selectattr("area", "eq", area) | list | length %}
+    <li>
+      <button type="button" class="area-card area-{{ loop.index }}" data-filter="area" data-value="{{ area }}">
+        <span class="area-count">{{ n }}</span>
+        <span class="area-name">{{ area }}</span>
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="toolbar">
+    {{ ui.search_box("Search titles, authors, journals…") }}
+    {{ ui.select_filter(pubs, "year", "Year", "All years") }}
+    {{ ui.select_filter(pubs, "site", "Site", "All sites") }}
+    {{ ui.select_filter(pubs, "type", "Type", "All types") }}
+    <span class="count" data-count aria-live="polite">{{ pubs | length }} shown</span>
+  </div>
+
+  {% if pubs %}
+  {% for year, items in pubs | groupby("year") | reverse %}
+  <section class="year-group" data-group>
+    <h2 class="year">{{ year }}</h2>
+    <ol class="pubs">
+      {% for p in items | sort(attribute="date", reverse=true) %}
+      {% set area_index = site.research_areas.index(p.area) + 1 if p.area in site.research_areas else 0 %}
+      <li class="pub" data-item data-year="{{ p.year }}" data-site="{{ p.site }}" data-type="{{ p.type }}" data-area="{{ p.area }}"
+          data-search="{{ [p.title, p.authors | join(' '), p.venue, p.area, p.site] | join(' ') }}">
+        <span class="area-bar area-{{ area_index }}" aria-hidden="true"></span>
+        <div class="pub-body">
+          <h3>
+            {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>
+            {% elif p.preprint %}<a href="{{ p.preprint }}" rel="noopener">{{ p.title }}</a>
+            {% else %}{{ p.title }}{% endif %}
+            {{ ui.example_badge(p) }}
+          </h3>
+          <p class="authors">
+            {% for a in p.authors %}{% if a in p.ddls_students %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{{ ", " if not loop.last }}{% endfor %}
+          </p>
+          <p class="pub-meta">
+            <em>{{ p.venue }}</em>, {{ p.date | nice_date }}
+            <span class="pill area-{{ area_index }}">{{ p.area }}</span>
+            <span class="pill">{{ p.site }}</span>
+            {% if p.type != "Article" %}<span class="pill outline">{{ p.type }}</span>{% endif %}
+          </p>
+          <p class="pub-links">
+            {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">DOI</a>{% endif %}
+            {% if p.preprint %}<a href="{{ p.preprint }}" rel="noopener">Preprint</a>{% endif %}
+            {% if p.code %}<a href="{{ p.code }}" rel="noopener">Code</a>{% endif %}
+            {% if p.data %}<a href="{{ p.data }}" rel="noopener">Data</a>{% endif %}
+          </p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+  <p class="empty" data-empty hidden>No papers match these filters. Try clearing the search or picking another year.</p>
+  {% else %}
+  <p class="empty">No papers yet. Be the first: <a href="{{ ui.issue_url(site, 'add-publication') }}">add your paper</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}
+{% block scripts %}<script src="filter.js"></script>{% endblock %}

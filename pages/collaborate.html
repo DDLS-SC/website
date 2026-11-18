@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block subtitle %}<p>Find a collaborator, swap skills, share an open position or build a hackathon team.</p>{% endblock %}
+{% block content %}
+{% set types = [
+  ("collaboration", "Collaboration"),
+  ("skill-swap", "Skill swap"),
+  ("position", "Open position"),
+  ("hackathon", "Hackathon team"),
+] %}
+{% set posts = data.opportunities | rejectattr("expires", "lt", today.isoformat()) | sort(attribute="posted", reverse=true) | list %}
+<div data-filter-root>
+  <div class="page-intro">
+    <p class="lead">Posts stay up until their expiry date, then disappear automatically.</p>
+    <a class="button" href="{{ ui.issue_url(site, 'add-opportunity') }}" rel="noopener">Post an opportunity</a>
+  </div>
+
+  <div class="toolbar">
+    <div class="chips" role="group" aria-label="Type of post">
+      <button type="button" class="chip-btn is-active" data-filter="type" data-value="">All</button>
+      {% for key, label in types %}
+      <button type="button" class="chip-btn type-{{ key }}" data-filter="type" data-value="{{ key }}">{{ label }}</button>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="toolbar">
+    {{ ui.search_box("Search posts and tags…") }}
+    {{ ui.select_filter(posts, "site", "Site", "All sites") }}
+    <span class="count" data-count aria-live="polite">{{ posts | length }} shown</span>
+  </div>
+
+  {% if posts %}
+  <ul class="posts">
+    {% for p in posts %}
+    {% set label = (types | selectattr(0, "eq", p.type) | map(attribute=1) | first) or p.type %}
+    <li class="post type-{{ p.type }}" data-item data-type="{{ p.type }}" data-site="{{ p.site }}" data-expires="{{ p.expires }}"
+        data-search="{{ [p.title, p.description, p.tags | join(' '), p.site, p.contact_name, label] | join(' ') }}">
+      <p class="post-type">{{ label }} {{ ui.example_badge(p) }}</p>
+      <h3>{% if p.link %}<a href="{{ p.link }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+      <p class="post-desc">{{ p.description }}</p>
+      {% if p.tags %}
+      <ul class="tags">
+        {% for t in p.tags %}<li><button type="button" data-search-for="{{ t }}">{{ t }}</button></li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="post-foot">
+        <p class="meta">{{ p.site }}, until {{ p.expires | nice_date }}</p>
+        <a class="button small" href="mailto:{{ p.contact_email }}?subject={{ ('DDLS: ' ~ p.title) | urlencode }}">Contact {{ p.contact_name.split()[0] }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="empty" data-empty hidden>No posts match these filters.</p>
+  {% else %}
+  <p class="empty">No open posts right now. <a href="{{ ui.issue_url(site, 'add-opportunity') }}">Post the first one</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}
+{% block scripts %}<script src="filter.js"></script>{% endblock %}

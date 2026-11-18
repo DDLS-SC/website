@@ -1,0 +1,90 @@
+[
+  {
+    "example": true,
+    "title": "Example: Spatial transcriptomics atlas of the developing human lung",
+    "authors": [
+      "A. Student",
+      "B. Researcher",
+      "C. Supervisor"
+    ],
+    "ddls_students": [
+      "A. Student"
+    ],
+    "venue": "Example Journal of Genomics",
+    "year": 2026,
+    "date": "2026-09-02",
+    "type": "Article",
+    "doi": "10.0000/example.1",
+    "preprint": "",
+    "code": "https://github.com/DDLS-SC",
+    "data": "",
+    "site": "Stockholm",
+    "area": "Cell and molecular biology"
+  },
+  {
+    "example": true,
+    "title": "Example: A graph neural network for predicting antimicrobial resistance from genomes",
+    "authors": [
+      "D. Student",
+      "E. Collaborator"
+    ],
+    "ddls_students": [
+      "D. Student"
+    ],
+    "venue": "bioRxiv",
+    "year": 2026,
+    "date": "2026-06-15",
+    "type": "Preprint",
+    "doi": "",
+    "preprint": "https://www.biorxiv.org/",
+    "code": "https://github.com/DDLS-SC",
+    "data": "",
+    "site": "Uppsala",
+    "area": "Epidemiology and biology of infection"
+  },
+  {
+    "example": true,
+    "title": "Example: Environmental DNA reveals seasonal shifts in Baltic Sea biodiversity",
+    "authors": [
+      "F. Student",
+      "G. Researcher",
+      "H. Student"
+    ],
+    "ddls_students": [
+      "F. Student",
+      "H. Student"
+    ],
+    "venue": "Example Ecology Letters",
+    "year": 2025,
+    "date": "2025-11-20",
+    "type": "Article",
+    "doi": "10.0000/example.3",
+    "preprint": "",
+    "code": "",
+    "data": "https://www.scilifelab.se/data/",
+    "site": "Gothenburg",
+    "area": "Evolution and biodiversity"
+  },
+  {
+    "example": true,
+    "title": "Example: Multimodal deep learning for early detection of sepsis in intensive care",
+    "authors": [
+      "I. Student",
+      "J. Clinician",
+      "K. Supervisor"
+    ],
+    "ddls_students": [
+      "I. Student"
+    ],
+    "venue": "Example Medicine",
+    "year": 2025,
+    "date": "2025-04-08",
+    "type": "Article",
+    "doi": "10.0000/example.4",
+    "preprint": "",
+    "code": "https://github.com/DDLS-SC",
+    "data": "",
+    "site": "Lund",
+    "area": "Precision medicine and diagnostics"
+  }
+]

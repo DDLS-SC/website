@@ -1,0 +1,98 @@
+[
+  {
+    "example": true,
+    "name": "A. Student",
+    "site": "Stockholm",
+    "affiliation": "KI",
+    "topic": "Spatial transcriptomics of lung development",
+    "skills": [
+      "Python",
+      "Scanpy",
+      "spatial omics"
+    ],
+    "orcid": "0000-0000-0000-0001",
+    "email": "a.student@example.se",
+    "website": "",
+    "started": 2024
+  },
+  {
+    "example": true,
+    "name": "D. Student",
+    "site": "Uppsala",
+    "affiliation": "UU",
+    "topic": "Machine learning for antimicrobial resistance",
+    "skills": [
+      "PyTorch",
+      "Nextflow",
+      "graph neural networks"
+    ],
+    "orcid": "0000-0000-0000-0002",
+    "email": "d.student@example.se",
+    "website": "https://github.com/DDLS-SC",
+    "started": 2023
+  },
+  {
+    "example": true,
+    "name": "F. Student",
+    "site": "Gothenburg",
+    "affiliation": "GU",
+    "topic": "Environmental DNA and marine biodiversity",
+    "skills": [
+      "R",
+      "metabarcoding",
+      "Snakemake"
+    ],
+    "orcid": "",
+    "email": "f.student@example.se",
+    "website": "",
+    "started": 2025
+  },
+  {
+    "example": true,
+    "name": "I. Student",
+    "site": "Lund",
+    "affiliation": "LU",
+    "topic": "Multimodal models for early sepsis detection",
+    "skills": [
+      "deep learning",
+      "clinical data",
+      "SQL"
+    ],
+    "orcid": "0000-0000-0000-0004",
+    "email": "i.student@example.se",
+    "website": "",
+    "started": 2024
+  },
+  {
+    "example": true,
+    "name": "L. Student",
+    "site": "Linköping",
+    "affiliation": "LiU",
+    "topic": "Protein structure prediction for enzyme design",
+    "skills": [
+      "AlphaFold",
+      "Rust",
+      "HPC"
+    ],
+    "orcid": "",
+    "email": "l.student@example.se",
+    "website": "",
+    "started": 2025
+  },
+  {
+    "example": true,
+    "name": "M. Student",
+    "site": "Umeå",
+    "affiliation": "UmU",
+    "topic": "Plant phenotyping with computer vision",
+    "skills": [
+      "computer vision",
+      "Python",
+      "drones"
+    ],
+    "orcid": "0000-0000-0000-0006",
+    "email": "m.student@example.se",
+    "website": "",
+    "started": 2023
+  }
+]

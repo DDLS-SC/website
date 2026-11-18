@@ -1,0 +1,65 @@
+name: Add or update your profile
+description: Add yourself to the People directory so other DDLS PhD students can find you.
+title: "[Profile] "
+labels: ["profile"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The directory is opt-in. Everything you enter here is shown publicly on the website.
+        To be removed later, open an issue or email the council, and we'll delete your entry.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: dropdown
+    id: site
+    attributes:
+      label: Site
+      options: [Stockholm, Uppsala, Linköping, Umeå, Gothenburg, Lund]
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: University or organisation
+      placeholder: KI, UU, KTH, GU, LU, LiU, UmU, SLU, …
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: Research topic in one line
+    validations:
+      required: true
+  - type: input
+    id: skills
+    attributes:
+      label: Skills you'd be happy to help others with
+      description: Separated by commas, for example "Python, Nextflow, single-cell".
+  - type: input
+    id: started
+    attributes:
+      label: Year you started your PhD
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID iD (optional)
+      placeholder: 0000-0000-0000-0000
+  - type: input
+    id: email
+    attributes:
+      label: Email address to show (optional)
+  - type: input
+    id: website
+    attributes:
+      label: Website, GitHub or lab page (optional)
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I agree that the information above is shown publicly on the website until I ask for it to be removed.
+          required: true

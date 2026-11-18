@@ -47,3 +47,35 @@
 
 {# Two-letter initials for a person's avatar, e.g. "Anna-Lena Fischer" -> "AF". #}
 {% macro initials(name) %}{% set parts = name.split() %}{{ parts[0][0] }}{% if parts | length > 1 %}{{ parts[-1][0] }}{% endif %}{% endmacro %}
+
+{# Link that opens a pre-filled GitHub issue form (.github/ISSUE_TEMPLATE/<template>.yml). #}
+{% macro issue_url(site, template) %}{{ site.repo }}/issues/new?template={{ template }}.yml{% endmacro %}
+
+{# Small "Example" label on placeholder entries (delete entries with "example": true before launch). #}
+{% macro example_badge(item) %}{% if item.example %}<span class="example-badge" title="Placeholder entry – replace with real content">Example</span>{% endif %}{% endmacro %}
+
+{# CSS-friendly name for a value, e.g. "Precision medicine and diagnostics" -> "precision-medicine-and-diagnostics". #}
+{% macro slug(text) %}{{ text | lower | replace(" ", "-") | replace("/", "-") }}{% endmacro %}
+
+{# Dropdown of every distinct value of `attr` in `items`, for the filter bars. #}
+{% macro select_filter(items, attr, label, all_label) %}
+<label class="select">
+  <span class="visually-hidden">{{ label }}</span>
+  <select data-filter="{{ attr }}">
+    <option value="">{{ all_label }}</option>
+    {% for value in items | map(attribute=attr) | reject("none") | unique | sort %}
+    <option value="{{ value }}">{{ value }}</option>
+    {% endfor %}
+  </select>
+</label>
+{% endmacro %}
+
+{% macro search_box(placeholder) %}
+<label class="search">
+  <span class="visually-hidden">Search</span>
+  <svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+  <input type="search" data-filter="q" placeholder="{{ placeholder }}" autocomplete="off" />
+</label>
+{% endmacro %}
+
+{% macro orcid(id) %}<a class="icon-link orcid" href="https://orcid.org/{{ id }}" rel="noopener" title="ORCID {{ id }}" aria-label="ORCID profile"><svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path fill="#fff" d="M8.2 7.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0ZM6.6 9.2h1.4v8H6.6v-8Zm3.3 0h3.5c3.3 0 4.8 2.4 4.8 4s-1.5 4-4.7 4H9.9v-8Zm1.4 6.7h2c2.2 0 3.3-1.4 3.3-2.7 0-1.3-1-2.7-3.3-2.7h-2v5.4Z"/></svg></a>{% endmacro %}
