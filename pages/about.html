@@ -18,7 +18,7 @@
   <ul class="people-grid">
     {% for member in data.members if member.role == role %}
     <li class="person">
-      <span class="avatar" aria-hidden="true">{{ ui.initials(member.name) }}</span>
+      <span class="avatar uni-{{ member.affiliation.split("/")[0] | lower }}" aria-hidden="true">{{ ui.initials(member.name) }}</span>
       <div>
         <p class="name">{{ member.name }}</p>
         <p class="meta">{{ member.affiliation }}</p>
