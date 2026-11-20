@@ -1,6 +1,6 @@
 # Files
 .venv
-
+.vscode
 # Folders# Folders
 dist/
 __pycache__/
