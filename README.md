@@ -64,13 +64,13 @@ python build.py --serve               # http://localhost:8000
 | --- | --- | --- |
 | **Research** | `data/publications.json` | GitHub issue "Add a publication" (DOI, students, site, area) |
 | **Collaborate** | `data/opportunities.json` | GitHub issue "Post an opportunity" |
-| **People** | `data/people.json` (opt-in) | GitHub issue "Add or update your profile" |
+| **People** | `student/<cohort>/<first.last>.json` | GitHub issue "Add or update your profile" |
 
 The forms live in `.github/ISSUE_TEMPLATE/`. When an issue comes in, a maintainer copies it into the data file and closes the issue.
 
 - **Publications:** run `python tools/add_publication.py <DOI> --students "Name; Name" --site Stockholm --area "Cell and molecular biology"`. It fetches title, authors, journal and date from Crossref and adds the entry. Research areas are listed in `site.json` → `research_areas`.
 - **Opportunities** need `type` (`collaboration`, `skill-swap`, `position` or `hackathon`), `posted` and `expires` dates (YYYY-MM-DD). Expired posts are hidden automatically, both when the site is built and in the visitor's browser, so you can clean the file up whenever convenient.
-- **People** is opt-in: only add someone who submitted the form themselves, and remove them as soon as they ask.
+- **People** reads every file in `student/<cohort year>/`. Use `"not available"` for missing links. `ra` is a research-area code from `site.json` → `research_area_codes` (CMB, EB, PMD, EBI); the site (Stockholm, Uppsala, …) comes from the university via `data/universities.json`. A new university must be added there, or the build prints a warning. Remove a student's file as soon as they ask.
 - Entries with `"example": true` are placeholders shown with an *Example* label. Delete them before launch.
 - Search and filters on these pages use `static/filter.js`; without JavaScript everything is simply listed.
 

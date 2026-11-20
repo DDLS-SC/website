@@ -1,0 +1,42 @@
+{
+  "Karolinska Institutet": {
+    "short": "KI",
+    "site": "Stockholm"
+  },
+  "KTH Royal Institute of Technology": {
+    "short": "KTH",
+    "site": "Stockholm"
+  },
+  "Stockholm University": {
+    "short": "SU",
+    "site": "Stockholm"
+  },
+  "Uppsala University": {
+    "short": "UU",
+    "site": "Uppsala"
+  },
+  "Swedish University of Agricultural Sciences": {
+    "short": "SLU",
+    "site": "Uppsala"
+  },
+  "Linköping University": {
+    "short": "LiU",
+    "site": "Linköping"
+  },
+  "Umeå University": {
+    "short": "UmU",
+    "site": "Umeå"
+  },
+  "University of Gothenburg": {
+    "short": "GU",
+    "site": "Gothenburg"
+  },
+  "Chalmers University of Technology": {
+    "short": "Chalmers",
+    "site": "Gothenburg"
+  },
+  "Lund University": {
+    "short": "LU",
+    "site": "Lund"
+  }
+}

@@ -29,6 +29,47 @@ def load_json(path):
         sys.exit(f"error: {path.relative_to(ROOT)} is not valid JSON: {err}")
 
 
+def load_students(site, universities):
+    """Read student/<cohort year>/<first.last>.json into one list for the People page.
+
+    The files keep the format they were added in; this adds the cohort (folder name),
+    the site (from data/universities.json) and the research area name (from site.json).
+    """
+    def given(value):
+        return value if value and value != "not available" else ""
+
+    areas = site.get("research_area_codes", {})
+    students = []
+    for path in sorted((ROOT / "student").glob("*/*.json")):
+        raw = load_json(path)
+        where = f"{path.relative_to(ROOT)}"
+        uni = universities.get(raw.get("university", ""))
+        if not uni:
+            print(f"warning: {where}: university {raw.get('university')!r} is not in data/universities.json", file=sys.stderr)
+        if raw.get("ra") not in areas:
+            print(f"warning: {where}: research area {raw.get('ra')!r} is not in site.json research_area_codes", file=sys.stderr)
+        orcid = given(raw.get("orcid"))
+        if orcid and not orcid.startswith("http"):
+            orcid = "https://orcid.org/" + orcid
+        students.append({
+            "name": raw["name"],
+            "cohort": path.parent.name,
+            "university": raw.get("university", ""),
+            "uni_short": (uni or {}).get("short", raw.get("university", "")),
+            "site": (uni or {}).get("site", ""),
+            "area_code": raw.get("ra", ""),
+            "area": areas.get(raw.get("ra"), ""),
+            "partner": given(raw.get("affiliation_note")),
+            "status": raw.get("status", ""),
+            "email": given(raw.get("email")),
+            "linkedin": given(raw.get("linkedin")),
+            "github": given(raw.get("github")),
+            "scholar": given(raw.get("ggscholar")),
+            "orcid": orcid,
+        })
+    return sorted(students, key=lambda s: s["name"].lower())
+
+
 def build():
     site = load_json(ROOT / "site.json")
     data = {p.stem: load_json(p) for p in sorted((ROOT / "data").glob("*.json"))}
@@ -38,6 +79,8 @@ def build():
     for path in sorted((ROOT / "news").glob("*.json")):
         news += load_json(path)
     data["news"] = sorted(news, key=lambda item: item["date"], reverse=True)
+
+    data["students"] = load_students(site, data.get("universities", {}))
 
     pages = {p.stem for p in (ROOT / "pages").glob("*.html")}
     nav = {item["page"] for item in site["nav"]}

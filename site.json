@@ -10,6 +10,12 @@
     "Precision medicine and diagnostics",
     "Epidemiology and biology of infection"
   ],
+  "research_area_codes": {
+    "CMB": "Cell and molecular biology",
+    "EB": "Evolution and biodiversity",
+    "PMD": "Precision medicine and diagnostics",
+    "EBI": "Epidemiology and biology of infection"
+  },
   "status": "Draft – launching soon",
   "nav": [
     {

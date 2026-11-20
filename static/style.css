@@ -797,28 +797,50 @@ nav a.nav-cta[aria-current="page"] { box-shadow: 0 0 0 2px #ffffff; }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  gap: 0.6rem;
 }
 .profile {
-  display: flex;
-  flex-direction: column;
-  padding: 1.1rem 1.15rem 0.9rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.8rem 0.9rem 0.7rem;
   border-radius: var(--radius);
   background: var(--surface);
+  border-left: 4px solid var(--area, var(--border));
   transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 .profile:hover { background: var(--bg); box-shadow: var(--shadow); }
 .profile[hidden] { display: none; }
-.profile-head { display: flex; align-items: center; gap: 0.75rem; }
-.profile-head h3 { margin: 0; font-size: 1.05rem; }
-.profile-head .meta { margin: 0.1rem 0 0; font-size: 0.82rem; }
-.profile .avatar { width: 2.75rem; height: 2.75rem; flex: none; }
-.topic { margin: 0.75rem 0 0; font-size: 0.95rem; font-weight: 550; }
-.profile-links { display: flex; align-items: center; gap: 0.6rem; margin: auto 0 0; padding-top: 0.75rem; }
-.profile-links .mail { margin-left: -0.35rem; }
-.icon-link { display: inline-flex; font-size: 1.25rem; color: #a6ce39; }
-.icon-link:hover { filter: brightness(0.9); }
+.profile .avatar { width: 2.5rem; height: 2.5rem; background: var(--area, var(--teal)); }
+@media (prefers-color-scheme: dark) { .profile .avatar { color: #0a1f22; } }
+.profile-main { min-width: 0; padding-right: 2.25rem; }
+.profile h3 { margin: 0; font-size: 0.98rem; line-height: 1.25; }
+.profile .meta { margin: 0.1rem 0 0; font-size: 0.8rem; }
+.partner { margin: 0.2rem 0 0; font-size: 0.8rem; font-weight: 600; color: var(--fg); }
+.profile-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem; margin: 0.35rem 0 0 -0.35rem; }
+.profile-links:empty { display: none; }
+.profile-links .mail { margin: 0; }
+.icon-link { display: inline-flex; padding: 0.35rem; border-radius: var(--radius-sm); font-size: 1.05rem; color: var(--muted); }
+.icon-link:hover { background: var(--bg); }
+.icon-link.linkedin:hover { color: #0a66c2; }
+.icon-link.github:hover { color: var(--fg); }
+.icon-link.scholar:hover { color: #4285f4; }
+.icon-link.orcid { color: #a6ce39; }
+.area-dot {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  color: var(--area);
+  background: color-mix(in srgb, var(--area) 12%, var(--bg));
+}
 
 /* ---------- Side-by-side columns (stack on narrow screens) ---------- */
 .columns {

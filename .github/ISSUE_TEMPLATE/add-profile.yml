@@ -1,13 +1,13 @@
 name: Add or update your profile
-description: Add yourself to the People directory so other DDLS PhD students can find you.
+description: Add yourself to the People page, or correct your entry.
 title: "[Profile] "
 labels: ["profile"]
 body:
   - type: markdown
     attributes:
       value: |
-        The directory is opt-in. Everything you enter here is shown publicly on the website.
-        To be removed later, open an issue or email the council, and we'll delete your entry.
+        Everything you enter here is shown publicly on the People page. Leave out anything you don't want listed.
+        To be removed, open an issue or email the council and we'll delete your entry.
   - type: input
     id: name
     attributes:
@@ -15,47 +15,66 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: site
+    id: university
     attributes:
-      label: Site
-      options: [Stockholm, Uppsala, Linköping, Umeå, Gothenburg, Lund]
+      label: University
+      options:
+        - Karolinska Institutet
+        - KTH Royal Institute of Technology
+        - Stockholm University
+        - Uppsala University
+        - Swedish University of Agricultural Sciences
+        - Linköping University
+        - Umeå University
+        - University of Gothenburg
+        - Chalmers University of Technology
+        - Lund University
+    validations:
+      required: true
+  - type: dropdown
+    id: ra
+    attributes:
+      label: DDLS research area
+      options:
+        - Cell and molecular biology (CMB)
+        - Evolution and biodiversity (EB)
+        - Precision medicine and diagnostics (PMD)
+        - Epidemiology and biology of infection (EBI)
     validations:
       required: true
   - type: input
-    id: affiliation
+    id: cohort
     attributes:
-      label: University or organisation
-      placeholder: KI, UU, KTH, GU, LU, LiU, UmU, SLU, …
+      label: Cohort (year you joined the Research School)
+      placeholder: "2025"
     validations:
       required: true
   - type: input
-    id: topic
+    id: affiliation_note
     attributes:
-      label: Research topic in one line
-    validations:
-      required: true
-  - type: input
-    id: skills
-    attributes:
-      label: Skills you'd be happy to help others with
-      description: Separated by commas, for example "Python, Nextflow, single-cell".
-  - type: input
-    id: started
-    attributes:
-      label: Year you started your PhD
-  - type: input
-    id: orcid
-    attributes:
-      label: ORCID iD (optional)
-      placeholder: 0000-0000-0000-0000
+      label: Partner company or organisation (optional)
+      description: For example if you are an industrial PhD student.
   - type: input
     id: email
     attributes:
       label: Email address to show (optional)
   - type: input
-    id: website
+    id: linkedin
     attributes:
-      label: Website, GitHub or lab page (optional)
+      label: LinkedIn (optional)
+  - type: input
+    id: github
+    attributes:
+      label: GitHub (optional)
+  - type: input
+    id: ggscholar
+    attributes:
+      label: Google Scholar (optional)
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID iD (optional)
+      placeholder: https://orcid.org/0000-0000-0000-0000
   - type: checkboxes
     id: consent
     attributes:
