@@ -8,5 +8,12 @@
   "linkedin": "https://www.linkedin.com/in/ardan-yilmaz-7b32a2192",
   "github": "https://github.com/ardan-yilmaz",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0000-0002-9004-3455"
+  "orcid": "https://orcid.org/0000-0002-9004-3455",
+  "publications": [
+    "10.1007/978-1-0716-4662-5_14",
+    "10.1101/2024.08.08.607159",
+    "10.12688/openreseurope.14936.1",
+    "10.12688/openreseurope.14936.2",
+    "10.12688/openreseurope.14936.3"
+  ]
 }

@@ -8,5 +8,13 @@
   "linkedin": "https://www.linkedin.com/in/nils-mechtel",
   "github": "https://github.com/nilsmechtel",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0000-0002-1278-7125"
+  "orcid": "https://orcid.org/0000-0002-1278-7125",
+  "publications": [
+    "10.1101/2021.12.15.470649",
+    "10.1101/2021.12.16.472947",
+    "10.3390/cells11233734",
+    "10.3390/ijms22189979",
+    "10.64898/2025.12.17.692011",
+    "10.64898/2026.04.19.719496"
+  ]
 }

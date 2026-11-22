@@ -8,5 +8,10 @@
   "linkedin": "https://www.linkedin.com/in/felix-waern",
   "github": "https://github.com/FelixWaern",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0004-9628-4868"
+  "orcid": "https://orcid.org/0009-0004-9628-4868",
+  "publications": [
+    "10.1038/s41588-026-02748-y",
+    "10.1038/s41593-024-01848-4",
+    "10.64898/2026.04.01.715621"
+  ]
 }

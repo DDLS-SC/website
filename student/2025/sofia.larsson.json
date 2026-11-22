@@ -8,5 +8,11 @@
   "linkedin": "https://www.linkedin.com/in/sofia-larsson-872494267",
   "github": "https://github.com/tsofiac",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0007-2837-3617"
+  "orcid": "https://orcid.org/0009-0007-2837-3617",
+  "publications": [
+    "10.1016/j.ailsci.2025.100142",
+    "10.1021/acs.molpharmaceut.6c00258",
+    "10.26434/chemrxiv-2025-0mqf8",
+    "10.26434/chemrxiv.15000361/v1"
+  ]
 }

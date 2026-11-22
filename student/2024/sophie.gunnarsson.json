@@ -8,5 +8,12 @@
   "linkedin": "https://www.linkedin.com/in/sophie-gunnarsson",
   "github": "not available",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0007-6825-8998"
+  "orcid": "https://orcid.org/0009-0007-6825-8998",
+  "publications": [
+    "10.1016/j.ebiom.2026.106272",
+    "10.1101/2024.07.09.24309717",
+    "10.1152/ajpcell.00499.2025",
+    "10.1186/s12936-021-03598-1",
+    "10.21203/rs.3.rs-10436396/v1"
+  ]
 }

@@ -8,5 +8,12 @@
   "linkedin": "not available",
   "github": "not available",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0009-6985-4307"
+  "orcid": "https://orcid.org/0009-0009-6985-4307",
+  "publications": [
+    "10.1016/j.xcrm.2024.101735",
+    "10.1038/s41591-026-04303-y",
+    "10.1093/hmg/ddaf111",
+    "10.1101/2025.06.27.25330344",
+    "10.64898/2026.10.19.759610"
+  ]
 }

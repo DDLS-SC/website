@@ -8,5 +8,10 @@
   "linkedin": "https://www.linkedin.com/in/emil-johansson-525928180",
   "github": "https://github.com/eemiljohansson",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0003-1250-0678"
+  "orcid": "https://orcid.org/0009-0003-1250-0678",
+  "publications": [
+    "10.1080/14789450.2025.2517146",
+    "10.1126/science.adx2678",
+    "10.5281/zenodo.13786123"
+  ]
 }

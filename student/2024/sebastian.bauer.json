@@ -8,5 +8,12 @@
   "linkedin": "https://www.linkedin.com/in/sebjbauer",
   "github": "https://github.com/sebjbauer",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0009-7265-1527"
+  "orcid": "https://orcid.org/0009-0009-7265-1527",
+  "publications": [
+    "10.1101/2025.05.12.653464",
+    "10.1101/2025.10.07.681022",
+    "10.1101/2025.10.10.680277",
+    "10.1242/jcs.262095",
+    "10.64898/2026.06.11.731424"
+  ]
 }

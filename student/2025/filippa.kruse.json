@@ -8,5 +8,9 @@
   "linkedin": "https://www.linkedin.com/in/filippa-kruse-5047b2181",
   "github": "not available",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0008-1324-6807"
+  "orcid": "https://orcid.org/0009-0008-1324-6807",
+  "publications": [
+    "10.1038/s41467-026-78908-9",
+    "10.1093/neuonc/noag255"
+  ]
 }

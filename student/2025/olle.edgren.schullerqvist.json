@@ -8,5 +8,9 @@
   "linkedin": "https://www.linkedin.com/in/olle-edgren-schullerqvist",
   "github": "https://github.com/Olleesch",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0006-3120-0920"
+  "orcid": "https://orcid.org/0009-0006-3120-0920",
+  "publications": [
+    "10.1007/978-3-032-31936-4_6",
+    "10.48550/arxiv.2512.08572"
+  ]
 }

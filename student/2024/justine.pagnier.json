@@ -8,5 +8,15 @@
   "linkedin": "https://www.linkedin.com/in/justine-pagnier-1a704a197",
   "github": "https://github.com/JustinePa",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0000-0002-6531-1374"
+  "orcid": "https://orcid.org/0000-0002-6531-1374",
+  "publications": [
+    "10.1007/s10530-024-03503-2",
+    "10.1101/2024.09.26.614897",
+    "10.1111/1755-0998.14073",
+    "10.1111/2041-210x.70194",
+    "10.21203/rs.3.rs-4804152/v1",
+    "10.21203/rs.3.rs-8702791/v1",
+    "10.3897/arphapreprints.e149221",
+    "10.3897/bdj.13.e148981"
+  ]
 }

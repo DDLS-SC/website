@@ -8,5 +8,10 @@
   "linkedin": "https://www.linkedin.com/in/hahagelin",
   "github": "not available",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0009-0643-8285"
+  "orcid": "https://orcid.org/0009-0009-0643-8285",
+  "publications": [
+    "10.1016/j.cmet.2026.02.013",
+    "10.1038/s41893-025-01672-z",
+    "10.21203/rs.3.rs-9173304/v1"
+  ]
 }

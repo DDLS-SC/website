@@ -8,5 +8,11 @@
   "linkedin": "not available",
   "github": "https://github.com/resabut",
   "ggscholar": "not available",
-  "orcid": "https://orcid.org/0009-0001-4599-1069"
+  "orcid": "https://orcid.org/0009-0001-4599-1069",
+  "publications": [
+    "10.1016/j.celrep.2025.116170",
+    "10.1016/j.celrep.2026.117202",
+    "10.1093/oxfimm/iqaf006",
+    "10.64898/2026.09.04.749379"
+  ]
 }
