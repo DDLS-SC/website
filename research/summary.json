@@ -171,6 +171,463 @@
     4.79,
     10.67
   ],
+  "journals": [
+    {
+      "name": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "count": 13,
+      "impact": 1.25
+    },
+    {
+      "name": "Nature Communications",
+      "count": 4,
+      "impact": 20.71
+    },
+    {
+      "name": "Science Advances",
+      "count": 3,
+      "impact": 16.59
+    },
+    {
+      "name": "Cell Reports Medicine",
+      "count": 3,
+      "impact": 14.72
+    },
+    {
+      "name": "Nature Neuroscience",
+      "count": 3,
+      "impact": 18.46
+    },
+    {
+      "name": "Nature Medicine",
+      "count": 3,
+      "impact": 31.67
+    },
+    {
+      "name": "Research Square",
+      "count": 3,
+      "impact": 0.33
+    },
+    {
+      "name": "Molecular Ecology Resources",
+      "count": 3,
+      "impact": 6.36
+    },
+    {
+      "name": "Open Research Europe",
+      "count": 3,
+      "impact": 2.0
+    },
+    {
+      "name": "Lecture notes in computer science",
+      "count": 3,
+      "impact": 3.34
+    },
+    {
+      "name": "Journal of the American Chemical Society",
+      "count": 2,
+      "impact": 17.73
+    },
+    {
+      "name": "mAbs",
+      "count": 2,
+      "impact": 9.54
+    },
+    {
+      "name": "Nature Metabolism",
+      "count": 2,
+      "impact": 18.57
+    },
+    {
+      "name": "Scientific Reports",
+      "count": 2,
+      "impact": 6.58
+    },
+    {
+      "name": "BMC Genomics",
+      "count": 2,
+      "impact": 4.57
+    },
+    {
+      "name": "Microbiology Spectrum",
+      "count": 2,
+      "impact": 4.79
+    },
+    {
+      "name": "medRxiv",
+      "count": 2,
+      "impact": 1.0
+    },
+    {
+      "name": "Nature Methods",
+      "count": 2,
+      "impact": 19.92
+    },
+    {
+      "name": "Cell Reports",
+      "count": 2,
+      "impact": 9.13
+    },
+    {
+      "name": "Proceedings of the National Academy of Sciences",
+      "count": 2,
+      "impact": 10.67
+    },
+    {
+      "name": "Biological Invasions",
+      "count": 2,
+      "impact": 3.12
+    },
+    {
+      "name": "Biodiversity Data Journal",
+      "count": 2,
+      "impact": 1.57
+    },
+    {
+      "name": "Proceedings of the Royal Society B Biological Sciences",
+      "count": 2,
+      "impact": 4.8
+    },
+    {
+      "name": "Artificial Intelligence in the Life Sciences",
+      "count": 2,
+      "impact": 6.76
+    },
+    {
+      "name": "Molecular Pharmaceutics",
+      "count": 2,
+      "impact": 5.23
+    },
+    {
+      "name": "Journal of Chemical Theory and Computation",
+      "count": 1,
+      "impact": 6.69
+    },
+    {
+      "name": "Structure",
+      "count": 1,
+      "impact": 4.11
+    },
+    {
+      "name": "Frontiers in Allergy",
+      "count": 1,
+      "impact": 3.88
+    },
+    {
+      "name": "Frontiers in Immunology",
+      "count": 1,
+      "impact": 7.87
+    },
+    {
+      "name": "Antibodies",
+      "count": 1,
+      "impact": 4.56
+    },
+    {
+      "name": "Epigenomics",
+      "count": 1,
+      "impact": 3.1
+    },
+    {
+      "name": "Biological Psychiatry Global Open Science",
+      "count": 1,
+      "impact": 3.34
+    },
+    {
+      "name": "Nature Chemical Biology",
+      "count": 1,
+      "impact": 10.04
+    },
+    {
+      "name": "Gut Microbes Reports",
+      "count": 1,
+      "impact": 2.43
+    },
+    {
+      "name": "Molecular Plant-Microbe Interactions",
+      "count": 1,
+      "impact": 3.64
+    },
+    {
+      "name": "BMC Microbiology",
+      "count": 1,
+      "impact": 6.72
+    },
+    {
+      "name": "BMC Biology",
+      "count": 1,
+      "impact": 6.32
+    },
+    {
+      "name": "Expert Review of Proteomics",
+      "count": 1,
+      "impact": 3.06
+    },
+    {
+      "name": "Science",
+      "count": 1,
+      "impact": 22.3
+    },
+    {
+      "name": "Zenodo (CERN European Organization for Nuclear Research)",
+      "count": 1,
+      "impact": 0.05
+    },
+    {
+      "name": "Nature Genetics",
+      "count": 1,
+      "impact": 18.45
+    },
+    {
+      "name": "Human Molecular Genetics",
+      "count": 1,
+      "impact": 3.48
+    },
+    {
+      "name": "Environment International",
+      "count": 1,
+      "impact": 12.0
+    },
+    {
+      "name": "The Lancet Microbe",
+      "count": 1,
+      "impact": 12.39
+    },
+    {
+      "name": "BMJ Global Health",
+      "count": 1,
+      "impact": 5.11
+    },
+    {
+      "name": "BMJ Open",
+      "count": 1,
+      "impact": 3.65
+    },
+    {
+      "name": "Antimicrobial Resistance and Infection Control",
+      "count": 1,
+      "impact": 7.18
+    },
+    {
+      "name": "PLoS Medicine",
+      "count": 1,
+      "impact": 11.67
+    },
+    {
+      "name": "Molecular Omics",
+      "count": 1,
+      "impact": 1.85
+    },
+    {
+      "name": "Viruses",
+      "count": 1,
+      "impact": 4.76
+    },
+    {
+      "name": "Cell Metabolism",
+      "count": 1,
+      "impact": 31.98
+    },
+    {
+      "name": "Nature Sustainability",
+      "count": 1,
+      "impact": 25.81
+    },
+    {
+      "name": "Journal of Cell Science",
+      "count": 1,
+      "impact": 3.26
+    },
+    {
+      "name": "Preprints.org",
+      "count": 1,
+      "impact": 0.62
+    },
+    {
+      "name": "Nature Ecology & Evolution",
+      "count": 1,
+      "impact": 12.71
+    },
+    {
+      "name": "EcoEvoRxiv",
+      "count": 1,
+      "impact": 0.84
+    },
+    {
+      "name": "Oxford Open Immunology",
+      "count": 1,
+      "impact": 8.25
+    },
+    {
+      "name": "Alzheimer s & Dementia",
+      "count": 1,
+      "impact": 1.45
+    },
+    {
+      "name": "Acta Neuropathologica",
+      "count": 1,
+      "impact": 10.59
+    },
+    {
+      "name": "Acta Psychologica",
+      "count": 1,
+      "impact": 7.77
+    },
+    {
+      "name": "Cortex",
+      "count": 1,
+      "impact": 3.46
+    },
+    {
+      "name": "Brain",
+      "count": 1,
+      "impact": 11.03
+    },
+    {
+      "name": "The Journal of Open Source Software",
+      "count": 1,
+      "impact": 4.42
+    },
+    {
+      "name": "PsyArXiv (OSF Preprints)",
+      "count": 1,
+      "impact": 0.8
+    },
+    {
+      "name": "Arthritis & Rheumatology",
+      "count": 1,
+      "impact": 5.84
+    },
+    {
+      "name": "Communications Medicine",
+      "count": 1,
+      "impact": 9.97
+    },
+    {
+      "name": "Bioinformatics Advances",
+      "count": 1,
+      "impact": 2.55
+    },
+    {
+      "name": "Nucleic Acids Research",
+      "count": 1,
+      "impact": 17.98
+    },
+    {
+      "name": "Science Translational Medicine",
+      "count": 1,
+      "impact": 17.0
+    },
+    {
+      "name": "Methods in Ecology and Evolution",
+      "count": 1,
+      "impact": 6.89
+    },
+    {
+      "name": "Frontiers in Molecular Biosciences",
+      "count": 1,
+      "impact": 4.74
+    },
+    {
+      "name": "Frontiers in Chemistry",
+      "count": 1,
+      "impact": 5.87
+    },
+    {
+      "name": "Cells",
+      "count": 1,
+      "impact": 7.52
+    },
+    {
+      "name": "International Journal of Molecular Sciences",
+      "count": 1,
+      "impact": 7.05
+    },
+    {
+      "name": "Bioinformatics",
+      "count": 1,
+      "impact": 7.56
+    },
+    {
+      "name": "PLoS Computational Biology",
+      "count": 1,
+      "impact": 5.48
+    },
+    {
+      "name": "Nano Letters",
+      "count": 1,
+      "impact": 9.38
+    },
+    {
+      "name": "EBioMedicine",
+      "count": 1,
+      "impact": 12.12
+    },
+    {
+      "name": "American Journal of Physiology-Cell Physiology",
+      "count": 1,
+      "impact": 5.77
+    },
+    {
+      "name": "Malaria Journal",
+      "count": 1,
+      "impact": 5.3
+    },
+    {
+      "name": "The Journal of General Physiology",
+      "count": 1,
+      "impact": 2.98
+    },
+    {
+      "name": "Roczniki Polskiego Towarzystwa Matematycznego. Seria 3, Matematyka Stosowana/Matematyka Stosowana/Mathematica Applicanda",
+      "count": 1,
+      "impact": 0.69
+    },
+    {
+      "name": "Methods in molecular biology",
+      "count": 1,
+      "impact": 1.31
+    },
+    {
+      "name": "IEEE Transactions on Vehicular Technology",
+      "count": 1,
+      "impact": 9.05
+    },
+    {
+      "name": "Neuro-Oncology",
+      "count": 1,
+      "impact": 1.09
+    },
+    {
+      "name": "Data & Policy",
+      "count": 1,
+      "impact": 5.56
+    },
+    {
+      "name": "SSRN Electronic Journal",
+      "count": 1,
+      "impact": 0.44
+    },
+    {
+      "name": "New Phytologist",
+      "count": 1,
+      "impact": 8.48
+    },
+    {
+      "name": "Archiv für Pathologische Anatomie und Physiologie und für Klinische Medicin",
+      "count": 1,
+      "impact": 3.39
+    },
+    {
+      "name": "ACS Omega",
+      "count": 1,
+      "impact": 6.05
+    },
+    {
+      "name": "Patterns",
+      "count": 1,
+      "impact": 17.01
+    }
+  ],
   "top_topics": [
     {
       "topic": "Dementia and Cognitive Impairment Research",

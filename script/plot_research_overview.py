@@ -404,6 +404,95 @@ def network_svg(
     return svg_wrap(width, height, "\n".join(parts), title)
 
 
+def ranked_journal_svg(
+    journals: list[dict],
+    *,
+    title: str,
+    subtitle: str = "",
+    width: int = 880,
+    top_n: int = 20,
+) -> str:
+    """Horizontal ranking: journals by impact factor, with publication counts.
+
+    Each journal dict: name, impact, count.
+    """
+    rows = sorted(
+        [j for j in journals if j.get("impact") is not None],
+        key=lambda j: (float(j["impact"]), int(j.get("count") or 0)),
+        reverse=True,
+    )[:top_n]
+    if not rows:
+        body = (
+            f'  <text x="{width/2}" y="200" text-anchor="middle" '
+            f'font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#666">'
+            f"No journal impact data</text>"
+        )
+        return svg_wrap(width, 400, body, title)
+
+    margin_l, margin_r, margin_t, margin_b = 280, 110, 70, 40
+    row_h = 28
+    height = margin_t + margin_b + row_h * len(rows)
+    plot_w = width - margin_l - margin_r
+    max_impact = max(float(j["impact"]) for j in rows) or 1.0
+    max_count = max(int(j.get("count") or 1) for j in rows) or 1
+
+    parts = [
+        f'  <text x="{width/2}" y="28" text-anchor="middle" '
+        f'font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#222">{esc(title)}</text>',
+    ]
+    if subtitle:
+        parts.append(
+            f'  <text x="{width/2}" y="50" text-anchor="middle" '
+            f'font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666">{esc(subtitle)}</text>'
+        )
+    # legend
+    parts.append(
+        f'  <rect x="{width - margin_r - 170}" y="18" width="14" height="10" fill="#4c78a8" rx="2"/>'
+        f'  <text x="{width - margin_r - 150}" y="27" font-family="Helvetica, Arial, sans-serif" '
+        f'font-size="11" fill="#444">Impact (2yr citedness)</text>'
+    )
+    parts.append(
+        f'  <circle cx="{width - margin_r - 170 + 7}" cy="42" r="5" fill="#e45756"/>'
+        f'  <text x="{width - margin_r - 150}" y="46" font-family="Helvetica, Arial, sans-serif" '
+        f'font-size="11" fill="#444">Publications</text>'
+    )
+
+    for i, journal in enumerate(rows):
+        y = margin_t + i * row_h
+        name = journal["name"] or "Unknown"
+        if len(name) > 36:
+            name = name[:33] + "…"
+        impact = float(journal["impact"])
+        count = int(journal.get("count") or 0)
+        bar_w = (impact / max_impact) * plot_w
+        parts.append(
+            f'  <text x="{margin_l - 10}" y="{y + 16}" text-anchor="end" '
+            f'font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">{esc(name)}</text>'
+        )
+        parts.append(
+            f'  <rect x="{margin_l}" y="{y + 4}" width="{bar_w:.1f}" height="16" '
+            f'fill="#4c78a8" rx="3"/>'
+        )
+        parts.append(
+            f'  <text x="{margin_l + bar_w + 6:.1f}" y="{y + 16}" '
+            f'font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">'
+            f"{impact:.1f}</text>"
+        )
+        # publication count marker sized by count
+        cx = width - margin_r + 36
+        r = 4 + 10 * math.sqrt(count / max_count)
+        parts.append(
+            f'  <circle cx="{cx}" cy="{y + 12}" r="{r:.1f}" fill="#e45756" fill-opacity="0.85"/>'
+        )
+        parts.append(
+            f'  <text x="{cx + r + 6:.1f}" y="{y + 16}" '
+            f'font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">'
+            f"n={count}</text>"
+        )
+
+    return svg_wrap(width, height, "\n".join(parts), title)
+
+
 # ---------------------------------------------------------------------------
 # Analyses
 # ---------------------------------------------------------------------------
@@ -426,6 +515,8 @@ def build_summary(students: list[dict], works: dict[str, dict]) -> dict:
     topic_pairs: Counter = Counter()
     doi_students: dict[str, list[str]] = defaultdict(list)
     seen_doi_for_metrics: set[str] = set()
+    journal_counts: Counter = Counter()
+    journal_impact_map: dict[str, float] = {}
 
     for student in students:
         ra = student["ra"]
@@ -446,8 +537,12 @@ def build_summary(students: list[dict], works: dict[str, dict]) -> dict:
                 if doi not in seen_doi_for_metrics:
                     journal_ifs.append(jif)
             topics = work.get("topics") or []
-            # Count topic co-occurrence once per unique DOI.
+            # Count topic co-occurrence and journals once per unique DOI.
             if doi not in seen_doi_for_metrics:
+                journal = (work.get("journal") or "Unknown").strip() or "Unknown"
+                journal_counts[journal] += 1
+                if work.get("journal_impact") is not None:
+                    journal_impact_map[journal] = float(work["journal_impact"])
                 for t in topics:
                     topic_counts[t] += 1
                 for i, a in enumerate(topics):
@@ -501,6 +596,14 @@ def build_summary(students: list[dict], works: dict[str, dict]) -> dict:
             for ra, vals in journal_if_by_ra.items()
         },
         "journal_impacts": journal_ifs,
+        "journals": [
+            {
+                "name": name,
+                "count": count,
+                "impact": journal_impact_map.get(name),
+            }
+            for name, count in journal_counts.most_common()
+        ],
         "top_topics": topic_counts.most_common(20),
         "topic_pairs": topic_pairs.most_common(40),
         "coauthors": coauthor.most_common(40),
@@ -587,6 +690,19 @@ def write_plots(summary: dict, students: list[dict]) -> list[Path]:
             subtitle="OpenAlex 2yr mean citedness of publication venues",
             colors=RA_COLORS,
             value_format="{:.1f}",
+        ),
+        encoding="utf-8",
+    )
+    written.append(path)
+
+    # journals ranked by impact factor, with publication counts
+    path = OUT_DIR / "journal_rank_impact_pubs.svg"
+    path.write_text(
+        ranked_journal_svg(
+            summary.get("journals") or [],
+            title="Journals ranked by impact",
+            subtitle="Bar = OpenAlex 2yr mean citedness · red marker = publication count",
+            top_n=20,
         ),
         encoding="utf-8",
     )
@@ -690,6 +806,7 @@ def main() -> int:
     summary_path = OUT_DIR / "summary.json"
     # make JSON-serializable
     serializable = dict(summary)
+    serializable["journals"] = summary.get("journals") or []
     serializable["top_topics"] = [
         {"topic": t, "count": c} for t, c in summary["top_topics"]
     ]

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="670" viewBox="0 0 880 670">
+  <title>Journals ranked by impact</title>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <text x="440.0" y="28" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Journals ranked by impact</text>
+  <text x="440.0" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666">Bar = OpenAlex 2yr mean citedness · red marker = publication count</text>
+  <rect x="600" y="18" width="14" height="10" fill="#4c78a8" rx="2"/>  <text x="620" y="27" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">Impact (2yr citedness)</text>
+  <circle cx="607" cy="42" r="5" fill="#e45756"/>  <text x="620" y="46" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">Publications</text>
+  <text x="270" y="86" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Cell Metabolism</text>
+  <rect x="280" y="74" width="490.0" height="16" fill="#4c78a8" rx="3"/>
+  <text x="776.0" y="86" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">32.0</text>
+  <circle cx="806" cy="82" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="86" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="114" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Medicine</text>
+  <rect x="280" y="102" width="485.3" height="16" fill="#4c78a8" rx="3"/>
+  <text x="771.3" y="114" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">31.7</text>
+  <circle cx="806" cy="110" r="12.7" fill="#e45756" fill-opacity="0.85"/>
+  <text x="824.7" y="114" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=3</text>
+  <text x="270" y="142" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Sustainability</text>
+  <rect x="280" y="130" width="395.5" height="16" fill="#4c78a8" rx="3"/>
+  <text x="681.5" y="142" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">25.8</text>
+  <circle cx="806" cy="138" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="142" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="170" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Science</text>
+  <rect x="280" y="158" width="341.7" height="16" fill="#4c78a8" rx="3"/>
+  <text x="627.7" y="170" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">22.3</text>
+  <circle cx="806" cy="166" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="170" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="198" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Communications</text>
+  <rect x="280" y="186" width="317.3" height="16" fill="#4c78a8" rx="3"/>
+  <text x="603.3" y="198" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">20.7</text>
+  <circle cx="806" cy="194" r="14.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="826.0" y="198" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=4</text>
+  <text x="270" y="226" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Methods</text>
+  <rect x="280" y="214" width="305.2" height="16" fill="#4c78a8" rx="3"/>
+  <text x="591.2" y="226" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">19.9</text>
+  <circle cx="806" cy="222" r="11.1" fill="#e45756" fill-opacity="0.85"/>
+  <text x="823.1" y="226" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=2</text>
+  <text x="270" y="254" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Metabolism</text>
+  <rect x="280" y="242" width="284.5" height="16" fill="#4c78a8" rx="3"/>
+  <text x="570.5" y="254" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">18.6</text>
+  <circle cx="806" cy="250" r="11.1" fill="#e45756" fill-opacity="0.85"/>
+  <text x="823.1" y="254" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=2</text>
+  <text x="270" y="282" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Neuroscience</text>
+  <rect x="280" y="270" width="282.8" height="16" fill="#4c78a8" rx="3"/>
+  <text x="568.8" y="282" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">18.5</text>
+  <circle cx="806" cy="278" r="12.7" fill="#e45756" fill-opacity="0.85"/>
+  <text x="824.7" y="282" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=3</text>
+  <text x="270" y="310" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Genetics</text>
+  <rect x="280" y="298" width="282.7" height="16" fill="#4c78a8" rx="3"/>
+  <text x="568.7" y="310" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">18.4</text>
+  <circle cx="806" cy="306" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="310" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="338" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nucleic Acids Research</text>
+  <rect x="280" y="326" width="275.5" height="16" fill="#4c78a8" rx="3"/>
+  <text x="561.5" y="338" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">18.0</text>
+  <circle cx="806" cy="334" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="338" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="366" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Journal of the American Chemical …</text>
+  <rect x="280" y="354" width="271.7" height="16" fill="#4c78a8" rx="3"/>
+  <text x="557.7" y="366" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">17.7</text>
+  <circle cx="806" cy="362" r="11.1" fill="#e45756" fill-opacity="0.85"/>
+  <text x="823.1" y="366" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=2</text>
+  <text x="270" y="394" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Patterns</text>
+  <rect x="280" y="382" width="260.6" height="16" fill="#4c78a8" rx="3"/>
+  <text x="546.6" y="394" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">17.0</text>
+  <circle cx="806" cy="390" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="394" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="422" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Science Translational Medicine</text>
+  <rect x="280" y="410" width="260.5" height="16" fill="#4c78a8" rx="3"/>
+  <text x="546.5" y="422" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">17.0</text>
+  <circle cx="806" cy="418" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="422" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="450" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Science Advances</text>
+  <rect x="280" y="438" width="254.2" height="16" fill="#4c78a8" rx="3"/>
+  <text x="540.2" y="450" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">16.6</text>
+  <circle cx="806" cy="446" r="12.7" fill="#e45756" fill-opacity="0.85"/>
+  <text x="824.7" y="450" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=3</text>
+  <text x="270" y="478" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Cell Reports Medicine</text>
+  <rect x="280" y="466" width="225.5" height="16" fill="#4c78a8" rx="3"/>
+  <text x="511.5" y="478" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">14.7</text>
+  <circle cx="806" cy="474" r="12.7" fill="#e45756" fill-opacity="0.85"/>
+  <text x="824.7" y="478" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=3</text>
+  <text x="270" y="506" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Nature Ecology &amp; Evolution</text>
+  <rect x="280" y="494" width="194.7" height="16" fill="#4c78a8" rx="3"/>
+  <text x="480.7" y="506" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">12.7</text>
+  <circle cx="806" cy="502" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="506" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="534" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">The Lancet Microbe</text>
+  <rect x="280" y="522" width="189.8" height="16" fill="#4c78a8" rx="3"/>
+  <text x="475.8" y="534" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">12.4</text>
+  <circle cx="806" cy="530" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="534" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="562" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">EBioMedicine</text>
+  <rect x="280" y="550" width="185.7" height="16" fill="#4c78a8" rx="3"/>
+  <text x="471.7" y="562" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">12.1</text>
+  <circle cx="806" cy="558" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="562" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="590" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">Environment International</text>
+  <rect x="280" y="578" width="183.9" height="16" fill="#4c78a8" rx="3"/>
+  <text x="469.9" y="590" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">12.0</text>
+  <circle cx="806" cy="586" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="590" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+  <text x="270" y="618" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">PLoS Medicine</text>
+  <rect x="280" y="606" width="178.8" height="16" fill="#4c78a8" rx="3"/>
+  <text x="464.8" y="618" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#222">11.7</text>
+  <circle cx="806" cy="614" r="9.0" fill="#e45756" fill-opacity="0.85"/>
+  <text x="821.0" y="618" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#333">n=1</text>
+</svg>
