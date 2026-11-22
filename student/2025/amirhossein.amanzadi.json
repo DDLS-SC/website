@@ -8,6 +8,10 @@
   "linkedin": "not available",
   "github": "https://github.com/amanzadi",
   "ggscholar": "https://scholar.google.com/citations?user=YJbIHQgAAAAJ",
-  "orcid": "not available",
-  "publications": []
+  "orcid": "https://orcid.org/0000-0002-0243-5900",
+  "publications": [
+    "10.1016/j.abb.2018.06.004",
+    "10.3390/ijms23137033",
+    "10.64898/2026.08.06.26359855"
+  ]
 }
