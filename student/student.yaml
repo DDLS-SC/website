@@ -1,0 +1,140 @@
+# Schema for student profile JSON files under student/<cohort>/*.json
+# Missing optional link/text values use the string "not available".
+# Cohort year is taken from the parent folder name (e.g. student/2024/).
+
+version: 1
+
+file_layout:
+  path: "student/<cohort>/<firstname.lastname>.json"
+  cohort: "DDLS Research School intake year (e.g. 2024, 2025, 2026)"
+  encoding: utf-8
+  format: json_object
+
+missing_value: "not available"
+
+fields:
+  name:
+    type: string
+    required: true
+    description: Full preferred name of the student.
+
+  university:
+    type: string
+    required: true
+    description: >
+      Primary degree-granting / host university (full name).
+      Industrial partners belong in affiliation_note, not here.
+    enum:
+      - Chalmers University of Technology
+      - Karolinska Institutet
+      - KTH Royal Institute of Technology
+      - Linköping University
+      - Lund University
+      - Stockholm University
+      - Swedish University of Agricultural Sciences
+      - Umeå University
+      - University of Gothenburg
+      - Uppsala University
+
+  affiliation_note:
+    type: string
+    required: true
+    description: >
+      Extra affiliation such as an industrial PhD partner or museum
+      (e.g. AstraZeneca, PredictMe AB, Swedish Museum of Natural History).
+      Use "not available" when there is none.
+    examples:
+      - "AstraZeneca"
+      - "PredictMe AB"
+      - "Swedish Museum of Natural History (NRM)"
+      - "not available"
+
+  ra:
+    type: string
+    required: true
+    description: DDLS research area code.
+    enum:
+      PMD: Precision Medicine and Diagnostics
+      CMB: Cell and Molecular Biology
+      EBI: Epidemiology and Biology of Infection
+      EB: Evolution and Biodiversity
+
+  status:
+    type: string
+    required: true
+    description: Current membership status in the Research School cohort.
+    enum:
+      - Student
+      - Alumnus
+
+  email:
+    type: string
+    required: true
+    description: >
+      Public institutional email address when available.
+      Use "not available" if no public email was found.
+    examples:
+      - "thanadol@kth.se"
+      - "not available"
+
+  linkedin:
+    type: string
+    required: true
+    description: LinkedIn profile URL, or "not available".
+    examples:
+      - "https://www.linkedin.com/in/thanadol-s/"
+      - "not available"
+
+  github:
+    type: string
+    required: true
+    description: Personal GitHub profile URL, or "not available".
+    examples:
+      - "https://github.com/thanadol-git"
+      - "not available"
+
+  ggscholar:
+    type: string
+    required: true
+    description: Google Scholar profile URL, or "not available".
+    examples:
+      - "https://scholar.google.com/citations?user=LTw-7ioAAAAJ&hl=en&oi=ao"
+      - "not available"
+
+  orcid:
+    type: string
+    required: true
+    description: >
+      Full ORCID URL (https://orcid.org/XXXX-XXXX-XXXX-XXXX),
+      or "not available" if unknown.
+    examples:
+      - "https://orcid.org/0000-0002-1072-6863"
+      - "not available"
+
+  publications:
+    type: array
+    items:
+      type: string
+      description: Bare DOI (lowercase), without https://doi.org/ prefix.
+    required: true
+    description: >
+      List of publication DOIs associated with the student
+      (usually filled from the ORCID public works API).
+      Use an empty list [] when none are known.
+    examples:
+      - ["10.1126/science.adx2678"]
+      - []
+
+example:
+  name: Thanadol Sutantiwanichkul
+  university: KTH Royal Institute of Technology
+  affiliation_note: not available
+  ra: PMD
+  status: Student
+  email: thanadol@kth.se
+  linkedin: https://www.linkedin.com/in/thanadol-s/
+  github: https://github.com/thanadol-git
+  ggscholar: https://scholar.google.com/citations?user=LTw-7ioAAAAJ&hl=en&oi=ao
+  orcid: https://orcid.org/0000-0002-1072-6863
+  publications:
+    - 10.1126/science.adx2678
