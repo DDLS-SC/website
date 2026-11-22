@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <title>Mean journal impact by research area</title>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <text x="360.0" y="32" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Mean journal impact by research area</text>
+  <text x="360.0" y="54" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666">OpenAlex 2yr mean citedness of publication venues</text>
+  <line x1="70" y1="70.0" x2="690" y2="70.0" stroke="#ddd" stroke-width="1"/>
+  <text x="62" y="74.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">10.9</text>
+  <line x1="70" y1="140.0" x2="690" y2="140.0" stroke="#ddd" stroke-width="1"/>
+  <text x="62" y="144.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">8.2</text>
+  <line x1="70" y1="210.0" x2="690" y2="210.0" stroke="#ddd" stroke-width="1"/>
+  <text x="62" y="214.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">5.5</text>
+  <line x1="70" y1="280.0" x2="690" y2="280.0" stroke="#ddd" stroke-width="1"/>
+  <text x="62" y="284.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">2.7</text>
+  <line x1="70" y1="350.0" x2="690" y2="350.0" stroke="#ddd" stroke-width="1"/>
+  <text x="62" y="354.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">0.0</text>
+  <rect x="82.0" y="70.0" width="140.0" height="280.0" fill="#1f77b4" rx="4"/>
+  <text x="152.0" y="64.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">10.9</text>
+  <text x="152.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">PMD</text>
+  <rect x="234.0" y="179.6" width="140.0" height="170.4" fill="#2ca02c" rx="4"/>
+  <text x="304.0" y="173.6" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">6.7</text>
+  <text x="304.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">CMB</text>
+  <rect x="386.0" y="186.9" width="140.0" height="163.1" fill="#ff7f0e" rx="4"/>
+  <text x="456.0" y="180.9" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">6.4</text>
+  <text x="456.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">EBI</text>
+  <rect x="538.0" y="197.3" width="140.0" height="152.7" fill="#9467bd" rx="4"/>
+  <text x="608.0" y="191.3" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">6.0</text>
+  <text x="608.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">EB</text>
+</svg>

@@ -1,0 +1,581 @@
+{
+  "students_total": 134,
+  "students_with_publications": 38,
+  "unique_dois": 137,
+  "works_resolved": 137,
+  "publications_by_ra": {
+    "CMB": 43,
+    "PMD": 58,
+    "EBI": 27,
+    "EB": 16
+  },
+  "publications_by_cohort": {
+    "2024": 113,
+    "2025": 30,
+    "2026": 1
+  },
+  "citations_by_ra": {
+    "CMB": 509,
+    "PMD": 1275,
+    "EBI": 444,
+    "EB": 259
+  },
+  "mean_fwci_by_ra": {
+    "CMB": 2.0397242424242426,
+    "PMD": 6.2522142857142855,
+    "EBI": 3.4672260869565217,
+    "EB": 3.433776923076923
+  },
+  "mean_journal_impact_by_ra": {
+    "CMB": 6.651162790697675,
+    "PMD": 10.928793103448276,
+    "EBI": 6.364074074074074,
+    "EB": 5.96125
+  },
+  "journal_impacts": [
+    6.69,
+    17.73,
+    9.54,
+    9.54,
+    4.11,
+    17.73,
+    16.59,
+    3.88,
+    7.87,
+    4.56,
+    14.72,
+    14.72,
+    18.57,
+    18.57,
+    3.1,
+    3.34,
+    10.04,
+    6.58,
+    2.43,
+    3.64,
+    4.57,
+    4.79,
+    4.57,
+    6.72,
+    6.32,
+    3.06,
+    22.3,
+    0.05,
+    18.45,
+    18.46,
+    1.25,
+    14.72,
+    31.67,
+    3.48,
+    31.67,
+    1.25,
+    12.0,
+    12.39,
+    1.0,
+    5.11,
+    3.65,
+    7.18,
+    11.67,
+    20.71,
+    1.85,
+    4.76,
+    31.98,
+    25.81,
+    0.33,
+    19.92,
+    19.92,
+    1.25,
+    3.26,
+    0.62,
+    1.25,
+    1.25,
+    12.71,
+    0.84,
+    9.13,
+    9.13,
+    8.25,
+    1.25,
+    1.45,
+    10.59,
+    7.77,
+    3.46,
+    20.71,
+    18.46,
+    11.03,
+    20.71,
+    18.46,
+    1.25,
+    4.42,
+    0.8,
+    5.84,
+    9.97,
+    10.67,
+    2.55,
+    17.98,
+    17.0,
+    3.12,
+    6.36,
+    6.36,
+    6.89,
+    3.12,
+    0.33,
+    1.57,
+    1.57,
+    4.74,
+    5.87,
+    7.52,
+    7.05,
+    1.25,
+    1.25,
+    7.56,
+    5.48,
+    1.25,
+    9.38,
+    12.12,
+    1.0,
+    5.77,
+    5.3,
+    0.33,
+    2.98,
+    1.25,
+    0.69,
+    1.31,
+    6.36,
+    2.0,
+    2.0,
+    2.0,
+    9.05,
+    20.71,
+    1.09,
+    5.56,
+    6.58,
+    31.67,
+    0.44,
+    1.25,
+    4.8,
+    4.8,
+    8.48,
+    3.34,
+    3.39,
+    6.05,
+    3.34,
+    3.34,
+    6.76,
+    5.23,
+    6.76,
+    5.23,
+    16.59,
+    16.59,
+    1.25,
+    17.01,
+    4.79,
+    10.67
+  ],
+  "top_topics": [
+    {
+      "topic": "Dementia and Cognitive Impairment Research",
+      "count": 12
+    },
+    {
+      "topic": "Cell Image Analysis Techniques",
+      "count": 12
+    },
+    {
+      "topic": "Alzheimer's disease research and treatments",
+      "count": 11
+    },
+    {
+      "topic": "Protein Structure and Dynamics",
+      "count": 10
+    },
+    {
+      "topic": "Metabolomics and Mass Spectrometry Studies",
+      "count": 10
+    },
+    {
+      "topic": "Advanced Proteomics Techniques and Applications",
+      "count": 9
+    },
+    {
+      "topic": "Bioinformatics and Genomic Networks",
+      "count": 9
+    },
+    {
+      "topic": "Environmental DNA in Biodiversity Studies",
+      "count": 8
+    },
+    {
+      "topic": "Computational Drug Discovery Methods",
+      "count": 8
+    },
+    {
+      "topic": "Single-cell and spatial transcriptomics",
+      "count": 7
+    },
+    {
+      "topic": "Gut microbiota and health",
+      "count": 7
+    },
+    {
+      "topic": "Scientific Computing and Data Management",
+      "count": 5
+    },
+    {
+      "topic": "Advanced Fluorescence Microscopy Techniques",
+      "count": 5
+    },
+    {
+      "topic": "Marine Biology and Ecology Research",
+      "count": 5
+    },
+    {
+      "topic": "Coral and Marine Ecosystems Studies",
+      "count": 5
+    },
+    {
+      "topic": "Genomics and Phylogenetic Studies",
+      "count": 5
+    },
+    {
+      "topic": "Epigenetics and DNA Methylation",
+      "count": 4
+    },
+    {
+      "topic": "Diabetes, Cardiovascular Risks, and Lipoproteins",
+      "count": 4
+    },
+    {
+      "topic": "Microbial Metabolic Engineering and Bioproduction",
+      "count": 4
+    },
+    {
+      "topic": "Bacterial Genetics and Biotechnology",
+      "count": 4
+    }
+  ],
+  "topic_pairs": [
+    {
+      "a": "Alzheimer's disease research and treatments",
+      "b": "Dementia and Cognitive Impairment Research",
+      "weight": 10
+    },
+    {
+      "a": "Advanced Fluorescence Microscopy Techniques",
+      "b": "Cell Image Analysis Techniques",
+      "weight": 5
+    },
+    {
+      "a": "Environmental DNA in Biodiversity Studies",
+      "b": "Marine Biology and Ecology Research",
+      "weight": 5
+    },
+    {
+      "a": "Coral and Marine Ecosystems Studies",
+      "b": "Environmental DNA in Biodiversity Studies",
+      "weight": 5
+    },
+    {
+      "a": "Coral and Marine Ecosystems Studies",
+      "b": "Marine Biology and Ecology Research",
+      "weight": 5
+    },
+    {
+      "a": "Cell Image Analysis Techniques",
+      "b": "Scientific Computing and Data Management",
+      "weight": 4
+    },
+    {
+      "a": "Forensic and Genetic Research",
+      "b": "Genomics and Phylogenetic Studies",
+      "weight": 4
+    },
+    {
+      "a": "Computational Drug Discovery Methods",
+      "b": "Pharmacogenetics and Drug Metabolism",
+      "weight": 4
+    },
+    {
+      "a": "Computational Drug Discovery Methods",
+      "b": "Metabolomics and Mass Spectrometry Studies",
+      "weight": 4
+    },
+    {
+      "a": "Metabolomics and Mass Spectrometry Studies",
+      "b": "Pharmacogenetics and Drug Metabolism",
+      "weight": 4
+    },
+    {
+      "a": "Light effects on plants",
+      "b": "Photoreceptor and optogenetics research",
+      "weight": 3
+    },
+    {
+      "a": "Monoclonal and Polyclonal Antibodies Research",
+      "b": "Protein Structure and Dynamics",
+      "weight": 3
+    },
+    {
+      "a": "Enzyme Structure and Function",
+      "b": "Protein Structure and Dynamics",
+      "weight": 3
+    },
+    {
+      "a": "Advanced Biosensing Techniques and Applications",
+      "b": "Advanced Proteomics Techniques and Applications",
+      "weight": 3
+    },
+    {
+      "a": "Antibiotic Resistance in Bacteria",
+      "b": "Antibiotic Use and Resistance",
+      "weight": 3
+    },
+    {
+      "a": "Alzheimer's disease research and treatments",
+      "b": "Hemispheric Asymmetry in Neuroscience",
+      "weight": 3
+    },
+    {
+      "a": "Dementia and Cognitive Impairment Research",
+      "b": "Hemispheric Asymmetry in Neuroscience",
+      "weight": 3
+    },
+    {
+      "a": "Dementia and Cognitive Impairment Research",
+      "b": "Functional Brain Connectivity Studies",
+      "weight": 3
+    },
+    {
+      "a": "Environmental DNA in Biodiversity Studies",
+      "b": "Marine Ecology and Invasive Species",
+      "weight": 3
+    },
+    {
+      "a": "Metabolomics and Mass Spectrometry Studies",
+      "b": "Microbial Metabolic Engineering and Bioproduction",
+      "weight": 3
+    },
+    {
+      "a": "Archaeology and ancient environmental studies",
+      "b": "Genomics and Phylogenetic Studies",
+      "weight": 3
+    },
+    {
+      "a": "Archaeology and ancient environmental studies",
+      "b": "Forensic and Genetic Research",
+      "weight": 3
+    },
+    {
+      "a": "AI in cancer detection",
+      "b": "Radiomics and Machine Learning in Medical Imaging",
+      "weight": 3
+    },
+    {
+      "a": "Computational Drug Discovery Methods",
+      "b": "Environmental Toxicology and Ecotoxicology",
+      "weight": 3
+    },
+    {
+      "a": "Photoreceptor and optogenetics research",
+      "b": "Protein Structure and Dynamics",
+      "weight": 2
+    },
+    {
+      "a": "Light effects on plants",
+      "b": "Protein Structure and Dynamics",
+      "weight": 2
+    },
+    {
+      "a": "Protein Structure and Dynamics",
+      "b": "vaccines and immunoinformatics approaches",
+      "weight": 2
+    },
+    {
+      "a": "Machine Learning in Bioinformatics",
+      "b": "Protein Structure and Dynamics",
+      "weight": 2
+    },
+    {
+      "a": "Epigenetics and DNA Methylation",
+      "b": "Pancreatic function and diabetes",
+      "weight": 2
+    },
+    {
+      "a": "Diabetes and associated disorders",
+      "b": "Pancreatic function and diabetes",
+      "weight": 2
+    },
+    {
+      "a": "Diabetes and associated disorders",
+      "b": "Epigenetics and DNA Methylation",
+      "weight": 2
+    },
+    {
+      "a": "Gut microbiota and health",
+      "b": "Maternal Mental Health During Pregnancy and Postpartum",
+      "weight": 2
+    },
+    {
+      "a": "Gut microbiota and health",
+      "b": "Oral microbiology and periodontitis research",
+      "weight": 2
+    },
+    {
+      "a": "Plant Disease Resistance and Genetics",
+      "b": "Plant Pathogens and Fungal Diseases",
+      "weight": 2
+    },
+    {
+      "a": "Gene expression and cancer classification",
+      "b": "Gut microbiota and health",
+      "weight": 2
+    },
+    {
+      "a": "Gut microbiota and health",
+      "b": "Metabolomics and Mass Spectrometry Studies",
+      "weight": 2
+    },
+    {
+      "a": "Gene expression and cancer classification",
+      "b": "Metabolomics and Mass Spectrometry Studies",
+      "weight": 2
+    },
+    {
+      "a": "Advanced Proteomics Techniques and Applications",
+      "b": "Bioinformatics and Genomic Networks",
+      "weight": 2
+    },
+    {
+      "a": "Neurogenesis and neuroplasticity mechanisms",
+      "b": "Single-cell and spatial transcriptomics",
+      "weight": 2
+    },
+    {
+      "a": "Advanced Proteomics Techniques and Applications",
+      "b": "Dementia and Cognitive Impairment Research",
+      "weight": 2
+    }
+  ],
+  "coauthors": [
+    {
+      "a": "Inês Cunha",
+      "b": "Sebastian Bauer",
+      "weight": 6
+    },
+    {
+      "a": "Emil Johansson",
+      "b": "Josefin Kenrick",
+      "weight": 3
+    },
+    {
+      "a": "Emil Johansson",
+      "b": "Hilda Sköld",
+      "weight": 2
+    },
+    {
+      "a": "Emil Johansson",
+      "b": "Thanadol Sutantiwanichkul",
+      "weight": 2
+    },
+    {
+      "a": "Hilda Sköld",
+      "b": "Josefin Kenrick",
+      "weight": 2
+    },
+    {
+      "a": "Hilda Sköld",
+      "b": "Thanadol Sutantiwanichkul",
+      "weight": 2
+    },
+    {
+      "a": "Josefin Kenrick",
+      "b": "Thanadol Sutantiwanichkul",
+      "weight": 2
+    },
+    {
+      "a": "Jens Baumann",
+      "b": "Olle Edgren Schüllerqvist",
+      "weight": 2
+    },
+    {
+      "a": "Bangzhuo Tong",
+      "b": "Yajuan Huang",
+      "weight": 2
+    },
+    {
+      "a": "Gabriele Vilkaite",
+      "b": "Yue Xu",
+      "weight": 2
+    },
+    {
+      "a": "Bangzhuo Tong",
+      "b": "Ding Yang Wang",
+      "weight": 2
+    },
+    {
+      "a": "Joan Escrivà Font",
+      "b": "Tianze Cao",
+      "weight": 1
+    },
+    {
+      "a": "Josefin Kenrick",
+      "b": "Ying Luo",
+      "weight": 1
+    },
+    {
+      "a": "Andrea García Navarro",
+      "b": "Grisna Isabel Prensa",
+      "weight": 1
+    },
+    {
+      "a": "Xingyue Wang",
+      "b": "Xuan Liu",
+      "weight": 1
+    },
+    {
+      "a": "Xingyue Wang",
+      "b": "Ying Luo",
+      "weight": 1
+    },
+    {
+      "a": "Xuan Liu",
+      "b": "Ying Luo",
+      "weight": 1
+    },
+    {
+      "a": "Bangzhuo Tong",
+      "b": "Jiahui Li",
+      "weight": 1
+    },
+    {
+      "a": "Ding Yang Wang",
+      "b": "Jiahui Li",
+      "weight": 1
+    },
+    {
+      "a": "Ding Yang Wang",
+      "b": "Yajuan Huang",
+      "weight": 1
+    },
+    {
+      "a": "Jiahui Li",
+      "b": "Yajuan Huang",
+      "weight": 1
+    },
+    {
+      "a": "Hugo Dettner Källander",
+      "b": "Nils Mechtel",
+      "weight": 1
+    },
+    {
+      "a": "Hugo Dettner Källander",
+      "b": "Songtao Cheng",
+      "weight": 1
+    },
+    {
+      "a": "Nils Mechtel",
+      "b": "Songtao Cheng",
+      "weight": 1
+    }
+  ],
+  "note": "journal_impact is OpenAlex source 2yr_mean_citedness (open proxy related to journal impact factor, not Clarivate JIF)."
+}

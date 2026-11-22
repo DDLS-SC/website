@@ -4,3 +4,4 @@
 # Folders# Folders
 dist/
 __pycache__/
+research/.cache/
