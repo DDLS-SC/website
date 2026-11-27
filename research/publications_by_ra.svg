@@ -4,25 +4,25 @@
   <text x="360.0" y="32" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Publications by research area</text>
   <text x="360.0" y="54" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666">DOI counts from student ORCID profiles</text>
   <line x1="70" y1="70.0" x2="690" y2="70.0" stroke="#ddd" stroke-width="1"/>
-  <text x="62" y="74.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">58</text>
+  <text x="62" y="74.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">61</text>
   <line x1="70" y1="140.0" x2="690" y2="140.0" stroke="#ddd" stroke-width="1"/>
-  <text x="62" y="144.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">44</text>
+  <text x="62" y="144.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">46</text>
   <line x1="70" y1="210.0" x2="690" y2="210.0" stroke="#ddd" stroke-width="1"/>
-  <text x="62" y="214.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">29</text>
+  <text x="62" y="214.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">30</text>
   <line x1="70" y1="280.0" x2="690" y2="280.0" stroke="#ddd" stroke-width="1"/>
-  <text x="62" y="284.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">14</text>
+  <text x="62" y="284.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">15</text>
   <line x1="70" y1="350.0" x2="690" y2="350.0" stroke="#ddd" stroke-width="1"/>
   <text x="62" y="354.0" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#666">0</text>
   <rect x="82.0" y="70.0" width="140.0" height="280.0" fill="#1f77b4" rx="4"/>
-  <text x="152.0" y="64.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">58</text>
+  <text x="152.0" y="64.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">61</text>
   <text x="152.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">PMD</text>
-  <rect x="234.0" y="142.4" width="140.0" height="207.6" fill="#2ca02c" rx="4"/>
-  <text x="304.0" y="136.4" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">43</text>
+  <rect x="234.0" y="152.6" width="140.0" height="197.4" fill="#2ca02c" rx="4"/>
+  <text x="304.0" y="146.6" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">43</text>
   <text x="304.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">CMB</text>
-  <rect x="386.0" y="219.7" width="140.0" height="130.3" fill="#ff7f0e" rx="4"/>
-  <text x="456.0" y="213.7" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">27</text>
+  <rect x="386.0" y="221.5" width="140.0" height="128.5" fill="#ff7f0e" rx="4"/>
+  <text x="456.0" y="215.5" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">28</text>
   <text x="456.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">EBI</text>
-  <rect x="538.0" y="272.8" width="140.0" height="77.2" fill="#9467bd" rx="4"/>
-  <text x="608.0" y="266.8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">16</text>
+  <rect x="538.0" y="276.6" width="140.0" height="73.4" fill="#9467bd" rx="4"/>
+  <text x="608.0" y="270.6" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">16</text>
   <text x="608.0" y="372" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333">EB</text>
 </svg>

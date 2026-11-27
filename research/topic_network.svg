@@ -3,30 +3,30 @@
   <rect width="100%" height="100%" fill="#fafafa"/>
   <text x="400.0" y="28" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#222">Research topic network</text>
   <text x="400.0" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666">Co-occurring OpenAlex topics on student papers</text>
-  <line x1="577.4" y1="227.6" x2="400.0" y2="125.2" stroke="#999" stroke-width="4.10" stroke-opacity="0.55"/>
-  <line x1="502.4" y1="152.6" x2="297.6" y2="152.6" stroke="#999" stroke-width="2.00" stroke-opacity="0.55"/>
-  <line x1="222.6" y1="432.4" x2="577.4" y2="432.4" stroke="#999" stroke-width="2.00" stroke-opacity="0.55"/>
+  <line x1="400.0" y1="125.2" x2="502.4" y2="152.6" stroke="#999" stroke-width="4.10" stroke-opacity="0.55"/>
+  <line x1="577.4" y1="227.6" x2="297.6" y2="152.6" stroke="#999" stroke-width="2.00" stroke-opacity="0.55"/>
+  <line x1="502.4" y1="507.4" x2="577.4" y2="432.4" stroke="#999" stroke-width="2.00" stroke-opacity="0.55"/>
   <line x1="222.6" y1="227.6" x2="577.4" y2="432.4" stroke="#999" stroke-width="1.30" stroke-opacity="0.55"/>
-  <line x1="502.4" y1="507.4" x2="400.0" y2="534.8" stroke="#999" stroke-width="1.30" stroke-opacity="0.55"/>
-  <line x1="502.4" y1="507.4" x2="400.0" y2="125.2" stroke="#999" stroke-width="1.30" stroke-opacity="0.55"/>
+  <line x1="297.6" y1="507.4" x2="400.0" y2="534.8" stroke="#999" stroke-width="1.30" stroke-opacity="0.55"/>
+  <line x1="297.6" y1="507.4" x2="502.4" y2="152.6" stroke="#999" stroke-width="1.30" stroke-opacity="0.55"/>
   <circle cx="400.0" cy="125.2" r="26.0" fill="#e45756" stroke="#fff" stroke-width="2"/>
-  <text x="400.0" y="165.2" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Dementia and Cognitive Im…</text>
+  <text x="400.0" y="165.2" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Alzheimer's disease resea…</text>
   <circle cx="502.4" cy="152.6" r="26.0" fill="#e45756" stroke="#fff" stroke-width="2"/>
-  <text x="502.4" y="192.6" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Cell Image Analysis Techn…</text>
-  <circle cx="577.4" cy="227.6" r="25.2" fill="#e45756" stroke="#fff" stroke-width="2"/>
-  <text x="577.4" y="266.8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Alzheimer's disease resea…</text>
+  <text x="502.4" y="192.6" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Dementia and Cognitive Im…</text>
+  <circle cx="577.4" cy="227.6" r="26.0" fill="#e45756" stroke="#fff" stroke-width="2"/>
+  <text x="577.4" y="267.6" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Cell Image Analysis Techn…</text>
   <circle cx="604.8" cy="330.0" r="24.4" fill="#e45756" stroke="#fff" stroke-width="2"/>
   <text x="604.8" y="368.4" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Protein Structure and Dyn…</text>
   <circle cx="577.4" cy="432.4" r="24.4" fill="#e45756" stroke="#fff" stroke-width="2"/>
   <text x="577.4" y="470.8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Metabolomics and Mass Spe…</text>
-  <circle cx="502.4" cy="507.4" r="23.6" fill="#e45756" stroke="#fff" stroke-width="2"/>
-  <text x="502.4" y="545.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Advanced Proteomics Techn…</text>
+  <circle cx="502.4" cy="507.4" r="24.4" fill="#e45756" stroke="#fff" stroke-width="2"/>
+  <text x="502.4" y="545.8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Computational Drug Discov…</text>
   <circle cx="400.0" cy="534.8" r="23.6" fill="#e45756" stroke="#fff" stroke-width="2"/>
   <text x="400.0" y="572.4" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Bioinformatics and Genomi…</text>
   <circle cx="297.6" cy="507.4" r="22.7" fill="#e45756" stroke="#fff" stroke-width="2"/>
-  <text x="297.6" y="544.1" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Environmental DNA in Biod…</text>
+  <text x="297.6" y="544.1" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Advanced Proteomics Techn…</text>
   <circle cx="222.6" cy="432.4" r="22.7" fill="#e45756" stroke="#fff" stroke-width="2"/>
-  <text x="222.6" y="469.1" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Computational Drug Discov…</text>
+  <text x="222.6" y="469.1" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Environmental DNA in Biod…</text>
   <circle cx="195.2" cy="330.0" r="21.7" fill="#e45756" stroke="#fff" stroke-width="2"/>
   <text x="195.2" y="365.7" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#333">Single-cell and spatial t…</text>
   <circle cx="222.6" cy="227.6" r="21.7" fill="#e45756" stroke="#fff" stroke-width="2"/>

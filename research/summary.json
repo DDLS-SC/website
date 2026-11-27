@@ -1,246 +1,250 @@
 {
   "students_total": 134,
-  "students_with_publications": 38,
-  "unique_dois": 137,
-  "works_resolved": 137,
+  "students_with_publications": 40,
+  "unique_dois": 141,
+  "works_resolved": 141,
   "publications_by_ra": {
     "CMB": 43,
-    "PMD": 58,
-    "EBI": 27,
+    "PMD": 61,
+    "EBI": 28,
     "EB": 16
   },
   "publications_by_cohort": {
     "2024": 113,
-    "2025": 30,
+    "2025": 34,
     "2026": 1
   },
   "citations_by_ra": {
-    "CMB": 509,
-    "PMD": 1275,
-    "EBI": 444,
-    "EB": 259
+    "CMB": 517,
+    "PMD": 1323,
+    "EBI": 429,
+    "EB": 263
   },
   "mean_fwci_by_ra": {
-    "CMB": 2.0397242424242426,
-    "PMD": 6.2522142857142855,
-    "EBI": 3.4672260869565217,
-    "EB": 3.433776923076923
+    "CMB": 2.0360848484848484,
+    "PMD": 5.79461923076923,
+    "EBI": 3.200283333333333,
+    "EB": 3.4063153846153846
   },
   "mean_journal_impact_by_ra": {
-    "CMB": 6.651162790697675,
-    "PMD": 10.928793103448276,
-    "EBI": 6.364074074074074,
-    "EB": 5.96125
+    "CMB": 6.646046511627906,
+    "PMD": 10.565409836065573,
+    "EBI": 6.180714285714286,
+    "EB": 5.9799999999999995
   },
   "journal_impacts": [
-    6.69,
-    17.73,
-    9.54,
-    9.54,
-    4.11,
-    17.73,
-    16.59,
-    3.88,
+    6.64,
+    17.71,
+    9.53,
+    9.53,
+    4.05,
+    17.71,
+    16.54,
+    3.92,
     7.87,
-    4.56,
-    14.72,
-    14.72,
-    18.57,
-    18.57,
+    4.61,
+    14.71,
+    14.71,
+    18.51,
+    18.51,
     3.1,
-    3.34,
-    10.04,
-    6.58,
+    3.31,
+    9.96,
+    6.6,
     2.43,
     3.64,
     4.57,
-    4.79,
+    4.78,
     4.57,
-    6.72,
-    6.32,
+    6.73,
+    6.31,
     3.06,
-    22.3,
-    0.05,
-    18.45,
-    18.46,
-    1.25,
-    14.72,
-    31.67,
-    3.48,
-    31.67,
-    1.25,
-    12.0,
-    12.39,
-    1.0,
-    5.11,
-    3.65,
-    7.18,
-    11.67,
-    20.71,
-    1.85,
-    4.76,
-    31.98,
-    25.81,
-    0.33,
-    19.92,
-    19.92,
-    1.25,
-    3.26,
-    0.62,
-    1.25,
-    1.25,
-    12.71,
-    0.84,
-    9.13,
-    9.13,
-    8.25,
-    1.25,
-    1.45,
-    10.59,
-    7.77,
-    3.46,
-    20.71,
-    18.46,
+    22.14,
+    0.09,
+    18.41,
+    18.06,
+    1.23,
+    14.71,
+    31.7,
+    3.51,
+    31.7,
+    1.23,
+    12.03,
+    12.37,
+    0.98,
+    5.16,
+    3.69,
+    7.22,
+    11.71,
+    20.66,
+    1.87,
+    4.78,
+    31.87,
+    25.8,
+    0.34,
+    19.74,
+    19.74,
+    1.23,
+    3.23,
+    0.72,
+    1.23,
+    1.23,
+    12.72,
+    0.82,
+    9.0,
+    9.0,
+    8.46,
+    1.23,
+    1.44,
+    10.57,
+    8.01,
+    3.43,
+    20.66,
+    18.06,
     11.03,
-    20.71,
-    18.46,
-    1.25,
-    4.42,
-    0.8,
+    20.66,
+    18.06,
+    1.23,
+    4.4,
+    0.75,
     5.84,
-    9.97,
-    10.67,
-    2.55,
-    17.98,
-    17.0,
-    3.12,
-    6.36,
-    6.36,
-    6.89,
-    3.12,
-    0.33,
-    1.57,
-    1.57,
-    4.74,
-    5.87,
-    7.52,
-    7.05,
-    1.25,
-    1.25,
+    10.0,
+    10.59,
+    2.56,
+    17.92,
+    16.96,
+    3.15,
+    6.43,
+    6.43,
+    6.95,
+    3.15,
+    0.34,
+    1.66,
+    1.66,
+    4.75,
+    5.88,
+    7.53,
+    7.04,
+    1.23,
+    1.23,
     7.56,
-    5.48,
-    1.25,
+    5.4,
+    1.23,
     9.38,
-    12.12,
-    1.0,
-    5.77,
-    5.3,
-    0.33,
-    2.98,
-    1.25,
+    12.15,
+    0.98,
+    5.79,
+    5.33,
+    0.34,
+    2.88,
+    1.23,
     0.69,
-    1.31,
-    6.36,
-    2.0,
-    2.0,
-    2.0,
-    9.05,
-    20.71,
+    1.08,
+    3.74,
+    7.04,
+    1.37,
+    1.3,
+    6.43,
+    2.22,
+    2.22,
+    2.22,
+    9.08,
+    20.66,
     1.09,
-    5.56,
-    6.58,
-    31.67,
-    0.44,
-    1.25,
-    4.8,
-    4.8,
-    8.48,
-    3.34,
+    5.62,
+    6.6,
+    31.7,
+    0.42,
+    1.23,
+    4.78,
+    4.78,
+    8.5,
     3.39,
-    6.05,
-    3.34,
-    3.34,
-    6.76,
-    5.23,
-    6.76,
-    5.23,
-    16.59,
-    16.59,
-    1.25,
-    17.01,
-    4.79,
-    10.67
+    3.38,
+    6.06,
+    3.39,
+    3.39,
+    6.82,
+    5.25,
+    6.82,
+    5.25,
+    16.54,
+    16.54,
+    1.23,
+    17.15,
+    4.78,
+    10.59
   ],
   "journals": [
     {
       "name": "bioRxiv (Cold Spring Harbor Laboratory)",
       "count": 13,
-      "impact": 1.25
+      "impact": 1.23
     },
     {
       "name": "Nature Communications",
       "count": 4,
-      "impact": 20.71
+      "impact": 20.66
     },
     {
       "name": "Science Advances",
       "count": 3,
-      "impact": 16.59
+      "impact": 16.54
     },
     {
       "name": "Cell Reports Medicine",
       "count": 3,
-      "impact": 14.72
+      "impact": 14.71
     },
     {
       "name": "Nature Neuroscience",
       "count": 3,
-      "impact": 18.46
+      "impact": 18.06
     },
     {
       "name": "Nature Medicine",
       "count": 3,
-      "impact": 31.67
+      "impact": 31.7
     },
     {
       "name": "Research Square",
       "count": 3,
-      "impact": 0.33
+      "impact": 0.34
     },
     {
       "name": "Molecular Ecology Resources",
       "count": 3,
-      "impact": 6.36
+      "impact": 6.43
     },
     {
       "name": "Open Research Europe",
       "count": 3,
-      "impact": 2.0
+      "impact": 2.22
     },
     {
       "name": "Lecture notes in computer science",
       "count": 3,
-      "impact": 3.34
+      "impact": 3.39
     },
     {
       "name": "Journal of the American Chemical Society",
       "count": 2,
-      "impact": 17.73
+      "impact": 17.71
     },
     {
       "name": "mAbs",
       "count": 2,
-      "impact": 9.54
+      "impact": 9.53
     },
     {
       "name": "Nature Metabolism",
       "count": 2,
-      "impact": 18.57
+      "impact": 18.51
     },
     {
       "name": "Scientific Reports",
       "count": 2,
-      "impact": 6.58
+      "impact": 6.6
     },
     {
       "name": "BMC Genomics",
@@ -250,67 +254,72 @@
     {
       "name": "Microbiology Spectrum",
       "count": 2,
-      "impact": 4.79
+      "impact": 4.78
     },
     {
       "name": "medRxiv",
       "count": 2,
-      "impact": 1.0
+      "impact": 0.98
     },
     {
       "name": "Nature Methods",
       "count": 2,
-      "impact": 19.92
+      "impact": 19.74
     },
     {
       "name": "Cell Reports",
       "count": 2,
-      "impact": 9.13
+      "impact": 9.0
     },
     {
       "name": "Proceedings of the National Academy of Sciences",
       "count": 2,
-      "impact": 10.67
+      "impact": 10.59
     },
     {
       "name": "Biological Invasions",
       "count": 2,
-      "impact": 3.12
+      "impact": 3.15
     },
     {
       "name": "Biodiversity Data Journal",
       "count": 2,
-      "impact": 1.57
+      "impact": 1.66
+    },
+    {
+      "name": "International Journal of Molecular Sciences",
+      "count": 2,
+      "impact": 7.04
     },
     {
       "name": "Proceedings of the Royal Society B Biological Sciences",
       "count": 2,
-      "impact": 4.8
+      "impact": 4.78
     },
     {
       "name": "Artificial Intelligence in the Life Sciences",
       "count": 2,
-      "impact": 6.76
+      "impact": 6.82
     },
     {
       "name": "Molecular Pharmaceutics",
       "count": 2,
-      "impact": 5.23
+      "impact": 5.25
     },
     {
       "name": "Journal of Chemical Theory and Computation",
       "count": 1,
-      "impact": 6.69
+      "impact": 6.64
     },
     {
       "name": "Structure",
       "count": 1,
-      "impact": 4.11
+      "impact": 4.05
     },
     {
       "name": "Frontiers in Allergy",
       "count": 1,
-      "impact": 3.88
+      "impact": 3.92
     },
     {
       "name": "Frontiers in Immunology",
@@ -320,7 +329,7 @@
     {
       "name": "Antibodies",
       "count": 1,
-      "impact": 4.56
+      "impact": 4.61
     },
     {
       "name": "Epigenomics",
@@ -330,12 +339,12 @@
     {
       "name": "Biological Psychiatry Global Open Science",
       "count": 1,
-      "impact": 3.34
+      "impact": 3.31
     },
     {
       "name": "Nature Chemical Biology",
       "count": 1,
-      "impact": 10.04
+      "impact": 9.96
     },
     {
       "name": "Gut Microbes Reports",
@@ -350,12 +359,12 @@
     {
       "name": "BMC Microbiology",
       "count": 1,
-      "impact": 6.72
+      "impact": 6.73
     },
     {
       "name": "BMC Biology",
       "count": 1,
-      "impact": 6.32
+      "impact": 6.31
     },
     {
       "name": "Expert Review of Proteomics",
@@ -365,117 +374,117 @@
     {
       "name": "Science",
       "count": 1,
-      "impact": 22.3
+      "impact": 22.14
     },
     {
       "name": "Zenodo (CERN European Organization for Nuclear Research)",
       "count": 1,
-      "impact": 0.05
+      "impact": 0.09
     },
     {
       "name": "Nature Genetics",
       "count": 1,
-      "impact": 18.45
+      "impact": 18.41
     },
     {
       "name": "Human Molecular Genetics",
       "count": 1,
-      "impact": 3.48
+      "impact": 3.51
     },
     {
       "name": "Environment International",
       "count": 1,
-      "impact": 12.0
+      "impact": 12.03
     },
     {
       "name": "The Lancet Microbe",
       "count": 1,
-      "impact": 12.39
+      "impact": 12.37
     },
     {
       "name": "BMJ Global Health",
       "count": 1,
-      "impact": 5.11
+      "impact": 5.16
     },
     {
       "name": "BMJ Open",
       "count": 1,
-      "impact": 3.65
+      "impact": 3.69
     },
     {
       "name": "Antimicrobial Resistance and Infection Control",
       "count": 1,
-      "impact": 7.18
+      "impact": 7.22
     },
     {
       "name": "PLoS Medicine",
       "count": 1,
-      "impact": 11.67
+      "impact": 11.71
     },
     {
       "name": "Molecular Omics",
       "count": 1,
-      "impact": 1.85
+      "impact": 1.87
     },
     {
       "name": "Viruses",
       "count": 1,
-      "impact": 4.76
+      "impact": 4.78
     },
     {
       "name": "Cell Metabolism",
       "count": 1,
-      "impact": 31.98
+      "impact": 31.87
     },
     {
       "name": "Nature Sustainability",
       "count": 1,
-      "impact": 25.81
+      "impact": 25.8
     },
     {
       "name": "Journal of Cell Science",
       "count": 1,
-      "impact": 3.26
+      "impact": 3.23
     },
     {
       "name": "Preprints.org",
       "count": 1,
-      "impact": 0.62
+      "impact": 0.72
     },
     {
       "name": "Nature Ecology & Evolution",
       "count": 1,
-      "impact": 12.71
+      "impact": 12.72
     },
     {
       "name": "EcoEvoRxiv",
       "count": 1,
-      "impact": 0.84
+      "impact": 0.82
     },
     {
       "name": "Oxford Open Immunology",
       "count": 1,
-      "impact": 8.25
+      "impact": 8.46
     },
     {
       "name": "Alzheimer s & Dementia",
       "count": 1,
-      "impact": 1.45
+      "impact": 1.44
     },
     {
       "name": "Acta Neuropathologica",
       "count": 1,
-      "impact": 10.59
+      "impact": 10.57
     },
     {
       "name": "Acta Psychologica",
       "count": 1,
-      "impact": 7.77
+      "impact": 8.01
     },
     {
       "name": "Cortex",
       "count": 1,
-      "impact": 3.46
+      "impact": 3.43
     },
     {
       "name": "Brain",
@@ -485,12 +494,12 @@
     {
       "name": "The Journal of Open Source Software",
       "count": 1,
-      "impact": 4.42
+      "impact": 4.4
     },
     {
       "name": "PsyArXiv (OSF Preprints)",
       "count": 1,
-      "impact": 0.8
+      "impact": 0.75
     },
     {
       "name": "Arthritis & Rheumatology",
@@ -500,47 +509,42 @@
     {
       "name": "Communications Medicine",
       "count": 1,
-      "impact": 9.97
+      "impact": 10.0
     },
     {
       "name": "Bioinformatics Advances",
       "count": 1,
-      "impact": 2.55
+      "impact": 2.56
     },
     {
       "name": "Nucleic Acids Research",
       "count": 1,
-      "impact": 17.98
+      "impact": 17.92
     },
     {
       "name": "Science Translational Medicine",
       "count": 1,
-      "impact": 17.0
+      "impact": 16.96
     },
     {
       "name": "Methods in Ecology and Evolution",
       "count": 1,
-      "impact": 6.89
+      "impact": 6.95
     },
     {
       "name": "Frontiers in Molecular Biosciences",
       "count": 1,
-      "impact": 4.74
+      "impact": 4.75
     },
     {
       "name": "Frontiers in Chemistry",
       "count": 1,
-      "impact": 5.87
+      "impact": 5.88
     },
     {
       "name": "Cells",
       "count": 1,
-      "impact": 7.52
-    },
-    {
-      "name": "International Journal of Molecular Sciences",
-      "count": 1,
-      "impact": 7.05
+      "impact": 7.53
     },
     {
       "name": "Bioinformatics",
@@ -550,7 +554,7 @@
     {
       "name": "PLoS Computational Biology",
       "count": 1,
-      "impact": 5.48
+      "impact": 5.4
     },
     {
       "name": "Nano Letters",
@@ -560,22 +564,22 @@
     {
       "name": "EBioMedicine",
       "count": 1,
-      "impact": 12.12
+      "impact": 12.15
     },
     {
       "name": "American Journal of Physiology-Cell Physiology",
       "count": 1,
-      "impact": 5.77
+      "impact": 5.79
     },
     {
       "name": "Malaria Journal",
       "count": 1,
-      "impact": 5.3
+      "impact": 5.33
     },
     {
       "name": "The Journal of General Physiology",
       "count": 1,
-      "impact": 2.98
+      "impact": 2.88
     },
     {
       "name": "Roczniki Polskiego Towarzystwa Matematycznego. Seria 3, Matematyka Stosowana/Matematyka Stosowana/Mathematica Applicanda",
@@ -583,14 +587,29 @@
       "impact": 0.69
     },
     {
+      "name": "Lecture notes in networks and systems",
+      "count": 1,
+      "impact": 1.08
+    },
+    {
+      "name": "Archives of Biochemistry and Biophysics",
+      "count": 1,
+      "impact": 3.74
+    },
+    {
+      "name": "European Neuropsychopharmacology",
+      "count": 1,
+      "impact": 1.37
+    },
+    {
       "name": "Methods in molecular biology",
       "count": 1,
-      "impact": 1.31
+      "impact": 1.3
     },
     {
       "name": "IEEE Transactions on Vehicular Technology",
       "count": 1,
-      "impact": 9.05
+      "impact": 9.08
     },
     {
       "name": "Neuro-Oncology",
@@ -600,35 +619,39 @@
     {
       "name": "Data & Policy",
       "count": 1,
-      "impact": 5.56
+      "impact": 5.62
     },
     {
       "name": "SSRN Electronic Journal",
       "count": 1,
-      "impact": 0.44
+      "impact": 0.42
     },
     {
       "name": "New Phytologist",
       "count": 1,
-      "impact": 8.48
+      "impact": 8.5
     },
     {
       "name": "Archiv für Pathologische Anatomie und Physiologie und für Klinische Medicin",
       "count": 1,
-      "impact": 3.39
+      "impact": 3.38
     },
     {
       "name": "ACS Omega",
       "count": 1,
-      "impact": 6.05
+      "impact": 6.06
     },
     {
       "name": "Patterns",
       "count": 1,
-      "impact": 17.01
+      "impact": 17.15
     }
   ],
   "top_topics": [
+    {
+      "topic": "Alzheimer's disease research and treatments",
+      "count": 12
+    },
     {
       "topic": "Dementia and Cognitive Impairment Research",
       "count": 12
@@ -636,10 +659,6 @@
     {
       "topic": "Cell Image Analysis Techniques",
       "count": 12
-    },
-    {
-      "topic": "Alzheimer's disease research and treatments",
-      "count": 11
     },
     {
       "topic": "Protein Structure and Dynamics",
@@ -650,19 +669,19 @@
       "count": 10
     },
     {
-      "topic": "Advanced Proteomics Techniques and Applications",
-      "count": 9
+      "topic": "Computational Drug Discovery Methods",
+      "count": 10
     },
     {
       "topic": "Bioinformatics and Genomic Networks",
       "count": 9
     },
     {
-      "topic": "Environmental DNA in Biodiversity Studies",
+      "topic": "Advanced Proteomics Techniques and Applications",
       "count": 8
     },
     {
-      "topic": "Computational Drug Discovery Methods",
+      "topic": "Environmental DNA in Biodiversity Studies",
       "count": 8
     },
     {
@@ -702,11 +721,11 @@
       "count": 4
     },
     {
-      "topic": "Microbial Metabolic Engineering and Bioproduction",
+      "topic": "Genetic Associations and Epidemiology",
       "count": 4
     },
     {
-      "topic": "Bacterial Genetics and Biotechnology",
+      "topic": "Microbial Metabolic Engineering and Bioproduction",
       "count": 4
     }
   ],
